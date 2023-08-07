@@ -11,22 +11,22 @@
 
 <body>  
     
-    <div class="container">
+    <div class="container-fluid">
         <main>
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th class="title-table" colspan="2">PLANILHA DE TESTE DE OPERAÇÃO DA TURMADA BRUTA</th>
+                        <th class="title-table" colspan="2">TABELA TESTE</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th class="item-linha-title">Quantidade</th>
-                        <td class="td-input input-qtd"><input type="text" name="quantidade" class="input-item" id="quantidade"></td>
+                        <td class="td-input input-qtd"><input type="text" name="quantidade" class="input-item" id="quantidade" placeholder="Digite a quantidade"></td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Sexo</th>
-                        <td class="td-input input-sexo"><input type="text" name="sexo" class="input-item" id="sexo"></td>
+                        <td class="td-input input-sexo"><input type="text" name="sexo" class="input-item" id="sexo" placeholder="M ou F"></td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Tipo</th>
@@ -46,7 +46,7 @@
                     </tr>
                     <tr>
                         <th class="item-linha-title">Peso de Saída (Kg)</th>
-                        <td class="indicador-amarelo"></td>
+                        <td class="indicador-amarelo" id="result-peso-saida"></td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Período (dias)</th>
@@ -66,11 +66,11 @@
                     </tr>
                     <tr>
                         <th class="item-linha-title">Custo por @</th>
-                        <td class="indicador-amarelo"></td>
+                        <td class="indicador-amarelo" id="custo-por-arroba"></td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Custo por Lote</th>
-                        <td class="indicador-amarelo"></td>
+                        <td class="indicador-amarelo" id="custo-por-lote"></td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Valor do Animal</th>
@@ -82,11 +82,11 @@
                     </tr>
                     <tr>
                         <th class="item-linha-title">Ganho de Peso @</th>
-                        <td class="indicador-amarelo"></td>
+                        <td class="indicador-amarelo" id="ganho-peso"></td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Total de @ Animal</th>
-                        <td class="indicador-amarelo"></td>
+                        <td class="indicador-amarelo" id="total-arroba-animal"></td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Mortalidade</th>
@@ -94,7 +94,7 @@
                     </tr>
                     <tr>
                         <th class="item-linha-title">Total de @</th>
-                        <td class="td-input input-total-@"><input type="text" name="total-@" class="input-item" id="total-@"></td>
+                        <td class="indicador-amarelo" id="total-arroba"></td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Invest Animais</th>
