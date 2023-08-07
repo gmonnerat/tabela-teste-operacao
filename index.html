@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Teste</title>
+</head>
+
+<body>  
+    
+    <div class="container">
+        <main>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="title-table" colspan="2">PLANILHA DE TESTE DE OPERAÇÃO DA TURMADA BRUTA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="item-linha-title">Quantidade</th>
+                        <td class="td-input input-qtd"><input type="text" name="quantidade" class="input-item" id="quantidade"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Sexo</th>
+                        <td class="td-input input-sexo"><input type="text" name="sexo" class="input-item" id="sexo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Tipo</th>
+                        <td class="td-input input-tipo"><input type="text" name="tipo" class="input-item" id="tipo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Idade</th>
+                        <td class="td-input input-idade"><input type="text" name="idade" class="input-item" id="idade"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Tipo de Engorda</th>
+                        <td class="td-input input-tipo-engorda"><input type="text" name="tipo-engorda" class="input-item" id="tipo-engorda"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Peso de Entrada (Kg)</th>
+                        <td class="td-input input-peso-entrada"><input type="text" name="peso-entrada" class="input-item" id="peso-entrada"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Peso de Saída (Kg)</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Período (dias)</th>
+                        <td class="td-input input-periodo"><input type="text" name="periodo" class="input-item" id="periodo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Custo da Diária</th>
+                        <td class="td-input input-custo-diaria"><input type="text" name="custo-diaria" class="input-item" id="custo-diaria"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Ganho de Peso Dia (Kg)</th>
+                        <td class="td-input input-ganho-peso-dia"><input type="text" name="ganho-peso-dia" class="input-item" id="ganho-peso-dia"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Ganho de Peso Animal (Kg)</th>
+                        <td class="indicador-amarelo" id="result-ganho-peso-animal"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Custo por @</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Custo por Lote</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Valor do Animal</th>
+                        <td class="td-input input-valor-animal"><input type="text" name="valor-animal" class="input-item" id="valor-animal"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Rendimento</th>
+                        <td class="td-input input-rendimento"><input type="text" name="rendimento" class="input-item" id="rendimento"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Ganho de Peso @</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Total de @ Animal</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Mortalidade</th>
+                        <td class="td-input input-mortalidade"><input type="text" name="mortalidade" class="input-item" id="mortalidade"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Total de @</th>
+                        <td class="td-input input-total-@"><input type="text" name="total-@" class="input-item" id="total-@"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Invest Animais</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Invest Alimentação</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Custo de Capital-CDI</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Investimento Total</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title indicador-verde">Ponto de Equilíbrio @</th>
+                        <td class="indicador-verde"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Peso do Animal</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Peso da Produção</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Peso do Custo de Capital</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Cotação B3</th>
+                        <td class="td-input input-cotacao-b3"><input type="text" name="cotacao-b3" class="input-item" id="cotacao-b3"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Base da sua Região</th>
+                        <td class="td-input input-base-regiao"><input type="text" name="base-regiao" class="input-item" id="base-regiao"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Cotação B3 - Base</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Resultado p/ @</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Faturamento</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Lucro Líquido na Operação</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Lucro Líquido por Animal</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Taxa Líquida no Período</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Taxa Líquida ao Mês</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                    <tr>
+                        <th class="item-linha-title">Taxa Líquida ao Ano</th>
+                        <td class="indicador-amarelo"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+        <footer>
+
+        </footer>
+    </div>
+
+    <div class="scripts">
+        <script src="scripts.js"></script>
+    </div>
+</body>
+</html>

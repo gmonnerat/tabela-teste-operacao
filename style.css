@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+.title-table {
+    width: 100;
+    text-align: center;
+    background-color: #0d0dcc !important;
+    color: #FFF !important;
+    border: 1px solid #adadad !important;
+}
+.item-linha-title {
+    background-color: #e5e5e5 !important;
+    border: 1px solid #adadad !important;
+}
+.td-input  {
+    position: relative;
+    padding: 0 !important;
+}
+.input-item {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+table tbody th {
+    width: 200px !important;
+    font-size: 12px;
+}
+.indicador-verde {
+    background-color: #007c00 !important;
+    color: #FFF !important;
+}
+.indicador-amarelo {
+    background-color: #dfdb00 !important;
+    border: 1px solid #adadad !important;
+}
