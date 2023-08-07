@@ -3,89 +3,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // ####################### DECLARAÇÕES #######################
 
     let quantidade = document.querySelector('#quantidade');
-    let periodo = document.querySelector('#periodo');
-    let ganhoPesoDia = document.querySelector('#ganho-peso-dia');
+    let sexo = document.querySelector('#sexo');
+    let tipo = document.querySelector('#tipo');
+    let idade = document.querySelector('#idade');
+    let tipoEngorda = document.querySelector('#tipo-engorda');
     let pesoEntrada = document.querySelector('#peso-entrada');
-    let resultGanhoPesoAnimal = document.querySelector('#result-ganho-peso-animal');
     let resultPesoSaida = document.querySelector('#result-peso-saida');
+    let periodo = document.querySelector('#periodo');
+    let custoDiaria = document.querySelector('#custo-diaria');
+    let ganhoPesoDia = document.querySelector('#ganho-peso-dia');
+    let resultGanhoPesoAnimal = document.querySelector('#result-ganho-peso-animal');
+    let resultCustoPorArroba = document.querySelector('#custo-por-arroba');
     let resultTotalArrobaAnimal = document.querySelector('#total-arroba-animal');
     let rendimento = document.querySelector('#rendimento');
     let valorAnimal = document.querySelector('#valor-animal');
-    let custoDiaria = document.querySelector('#custo-diaria');
-    let resultCustoPorArroba = document.querySelector('#custo-por-arroba');
-    let resultCustoPorLote = document.querySelector('#custo-por-lote')
+    let resultCustoPorLote = document.querySelector('#custo-por-lote');
+    let resultGanhoPesoArroba = document.querySelector('#ganho-peso-arroba');
 
-    // ####################### OPERAÇÕES #######################
-
-    quantidade.addEventListener('change', (e) => {
-        e.preventDefault();
-        quantidade = document.querySelector('#quantidade');
-        custoDiaria = document.querySelector('#custo-diaria');
-        periodo = document.querySelector('#periodo')
-        if(quantidade.value != '' && custoDiaria.value != '' && periodo.value != '') {
-            getCustoPorLote(parseFloat(custoDiaria.value), parseFloat(quantidade.value), parseFloat(periodo.value));
-        }
-    });
-
-    periodo.addEventListener('change', (e) => {
-        e.preventDefault();
-        if(periodo != '' && ganhoPesoDia != '') {
-            getGanhoPesoAnimal(parseFloat(periodo.value), parseFloat(ganhoPesoDia.value));
-        }
-    });
-
-    ganhoPesoDia.addEventListener('change', (e) => {
-        e.preventDefault();
-        if(periodo.value != '' && ganhoPesoDia.value != '') {
-            getGanhoPesoAnimal(parseFloat(periodo.value), parseFloat(ganhoPesoDia.value));
-        }
-    });
-
-    pesoEntrada.addEventListener('change', (e) => {
-        e.preventDefault();
-        resultGanhoPesoAnimal = document.querySelector('#result-ganho-peso-animal');
-        if(pesoEntrada.value != '' && resultGanhoPesoAnimal.innerHTML != '') {
-            getPesoSaida(parseFloat(pesoEntrada.value), parseFloat(resultGanhoPesoAnimal.innerHTML));
-        }
-    });
-
-    rendimento.addEventListener('change', (e) => {
-        e.preventDefault();
-        resultPesoSaida = document.querySelector('#result-peso-saida');
-        rendimento = document.querySelector('#rendimento');
-        if(rendimento.value != '' && resultPesoSaida.innerHTML != ''){
-            getTotalArrobaAnimal(parseFloat(rendimento.value), parseFloat(resultPesoSaida.innerHTML));
-        }
-    });
-
-    custoDiaria.addEventListener('change', (e) => {
-        e.preventDefault();
-        custoDiaria = document.querySelector('#custo-diaria');
-        valorAnimal = document.querySelector('#valor-animal');
-        periodo = document.querySelector('#periodo');
-        resultTotalArrobaAnimal = document.querySelector('#total-arroba-animal');
-        if(valorAnimal.value != '' && custoDiaria.value != '' && periodo.value != '' && resultTotalArrobaAnimal.innerHTML != '') {
-            getCustoPorArroba(parseFloat(valorAnimal.value), parseFloat(custoDiaria.value), parseFloat(periodo.value), parseFloat(resultTotalArrobaAnimal.innerHTML))
-        }
-    });
-
-    valorAnimal.addEventListener('change', (e) => {
-        e.preventDefault();
-        custoDiaria = document.querySelector('#custo-diaria');
-        valorAnimal = document.querySelector('#valor-animal');
-        periodo = document.querySelector('#periodo');
-        resultTotalArrobaAnimal = document.querySelector('#total-arroba-animal');
-        if(valorAnimal.value != '' && custoDiaria.value != '' && periodo.value != '' && resultTotalArrobaAnimal.innerHTML != '') {
-            getCustoPorArroba(parseFloat(valorAnimal.value), parseFloat(custoDiaria.value), parseFloat(periodo.value), parseFloat(resultTotalArrobaAnimal.innerHTML));
-        }
-    });
-
-
-
-    // getCustoPorArroba(parseFloat(valorAnimal.value), parseFloat(custoDiaria.value), parseFloat(periodo.value), parseFloat(totalArrobaAnimal.innerHTML))
 
     // ####################### FUNÇÕES #######################
-
     function getGanhoPesoAnimal(periodo, ganhoPesoDia) {
         let ganhoPesoAnimal = periodo*ganhoPesoDia;
         resultGanhoPesoAnimal.innerHTML = ganhoPesoAnimal;
@@ -110,5 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let custoPorLote = (quantidade * custoDiaria) * periodo;
         resultCustoPorLote.innerHTML = custoPorLote;
     }
-    
+
+    function getGanhoPesoArroba(ganhoPesoAnimal, rendimento) {
+        let ganhoPesoArroba = (ganhoPesoAnimal * (rendimento/100)) / 15;
+        resultGanhoPesoArroba.innerHTML = ganhoPesoArroba.toFixed(2);
+    }
+
 });
+
+function generateResults() {
+    
+}
