@@ -11,7 +11,7 @@
 
 <body>  
     
-    <div class="container-fluid">
+    <div class="container">
         <main>
             <table class="table table-bordered">
                 <thead>
@@ -26,7 +26,13 @@
                     </tr>
                     <tr>
                         <th class="item-linha-title">Sexo</th>
-                        <td class="td-input input-sexo"><input type="text" name="sexo" class="input-item" id="sexo" placeholder="M ou F"></td>
+                        <td class="td-input input-sexo">
+                            <select class="input-item" name="sexo" id="sexo">
+                                <option value="-">--</option>
+                                <option value="M">M</option>
+                                <option value="F">F</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Tipo</th>

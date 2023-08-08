@@ -29,15 +29,18 @@ const resultPesoCustoCapital = document.querySelector('#peso-custo-capital');
 const cotacaoB3 = document.querySelector('#cotacao-b3');
 const baseRegiao = document.querySelector('#base-regiao');
 const resultCotacaoB3Base = document.querySelector('#cotacao-b3-base');
+const resultResultadoArroba = document.querySelector('#resultado-arroba');
+const resultFaturamento = document.querySelector('#faturamento');
+const resultLucroLiquidoOperacao = document.querySelector('#lucro-liquido-operacao');
+const resultLucroLiquidoAnimal = document.querySelector('#lucro-liquido-animal');
 
-const resultadoArroba = document.querySelector('#resultado-arroba');
-const faturamento = document.querySelector('#faturamento');
-const lucroLiquidoOperacao = document.querySelector('#lucro-liquido-operacao');
-const lucroLiquidoAnimal = document.querySelector('#lucro-liquido-animal');
-const taxaLiquidaPeriodo = document.querySelector('#taxa-liquida-periodo');
-const taxaLiquidaMes = document.querySelector('#taxa-liquida-mes');
-const taxaLiquidaAno = document.querySelector('#taxa-liquida-ano');;
+const resultTaxaLiquidaPeriodo = document.querySelector('#taxa-liquida-periodo');
+const resultTaxaLiquidaMes = document.querySelector('#taxa-liquida-mes');
+const resultTaxaLiquidaAno = document.querySelector('#taxa-liquida-ano');;
     
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
 // ####################### FUNÇÕES #######################    
 // --- Peso Saída (Kg)
 function getPesoSaida(pesoEntrada, ganhoPesoAnimal) {
@@ -77,20 +80,17 @@ function getTotalArrobaAnimal(pesoSaida, rendimento) {
 
 // -- Total de @
 function getTotalArroba(quantidade, mortalidade, totalArrobaAnimal) {
-    const totalArroba = (quantidade - (quantidade * (mortalidade/100))) * totalArrobaAnimal;
-    resultTotalArroba.innerHTML = totalArroba.toFixed(2);
+    resultTotalArroba.innerHTML = ((quantidade - (quantidade * (mortalidade/100))) * totalArrobaAnimal).toFixed(2);
 }
 
 // --- Investimento Animais
 function getInvestimentoAnimais(quantidade, valorAnimal) {
-    const investimentoAnimais = valorAnimal * quantidade;
-    resultInvestimentoAnimais.innerHTML = investimentoAnimais;
+    resultInvestimentoAnimais.innerHTML = (valorAnimal * quantidade.toFixed(2));
 }
 
 // --- Investimento Alimentação
 function getInvestimentoAlimentacao(quantidade, periodo, custoDiaria) {
-    const investimentoAlimentacao = quantidade * periodo * custoDiaria;
-    resultInvestimentoAlimentacao.innerHTML = investimentoAlimentacao;
+    resultInvestimentoAlimentacao.innerHTML = (quantidade * periodo * custoDiaria).toFixed(2);
 }
 
 // --- Custo de Capital CDI
@@ -126,42 +126,42 @@ function getPesoCustoCapital(capitalCDI, investTotal) {
 
 // --- Cotação B3 - Base
 function getCotacaoB3Base(cotacaoB3, baseRegiao) {
-    resultCotacaoB3Base.innerHTML = (cotacaoB3 - (cotacaoB3 * baseRegiao)).toFixed(2);
+    resultCotacaoB3Base.innerHTML = (cotacaoB3 - (cotacaoB3 * (baseRegiao/100))).toFixed(2);
 }
 
 // --- Resultado p/ @
-function getResultadoArroba() {
-    
+function getResultadoArroba(cotacaoB3Base, pontoEquilibrio) {
+    resultResultadoArroba.innerHTML = (cotacaoB3Base - pontoEquilibrio).toFixed(2);
 }
 
 // --- Faturamento
-function getFaturamento() {
-    
+function getFaturamento(totalArroba, cotacaoB3Base) {
+    resultFaturamento.innerHTML = (totalArroba * cotacaoB3Base).toFixed(2);
 }
 
 // --- Lucro Líquido na Operação
-function getLucroOperacao() {
-    
+function getLucroOperacao(faturamento, investTotal) {
+    resultLucroLiquidoOperacao.innerHTML = (faturamento - investTotal).toFixed(2);
 }
 
 // --- Lucro Líquido por Animal
-function getLucroAnimal() {
-    
+function getLucroAnimal(lucroOperacao, quantidade, mortalidade) {
+    resultLucroLiquidoAnimal.innerHTML = (lucroOperacao / (quantidade - (quantidade * (mortalidade/100)))).toFixed(2);
 }
 
 // --- Taxa Líquida no Período
-function getLucroPeriodo() {
-    
+function getTaxaLiquidaPeriodo(lucroOperacao, investTotal) {
+    resultTaxaLiquidaPeriodo.innerHTML = ((lucroOperacao * 100) / investTotal).toFixed(2);
 }
 
 // --- Taxa Líquida ao Mês
-function getLucroMes() {
-    
+function getTaxaLiquidaMes(taxaLiquidaPeriodo, periodo) {
+    resultTaxaLiquidaMes.innerHTML = (Math.pow((1 + (taxaLiquidaPeriodo/100)), (1/periodo/30)) - 1).toFixed(2);
 }
 
 // --- Taxa Líquida ao Ano
-function getLucroAno() {
-    
+function getTaxaLiquidaAno(taxaLiquidaMes) {
+    resultTaxaLiquidaAno.innerHTML = (Math.pow((1 + (taxaLiquidaMes/100)), 12) - 1).toFixed(2);
 }
 
 // --- Ponto de Equilíbrio
@@ -169,6 +169,9 @@ function getPontoEquilibrio(investTotal, totalArroba) {
     const pontoEquilibrio = investTotal/totalArroba;
     resultPontoEquilibrio.innerHTML = pontoEquilibrio.toFixed(2);
 }
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
 
 // ############## EXECUÇÃO DAS FUNÇÕES ##############
 function generateResults() {
@@ -202,6 +205,14 @@ function generateResults() {
         getPesoProducao(parseFloat(resultInvestimentoAlimentacao.innerHTML), parseFloat(resultInvestTotal.innerHTML));
         getPesoCustoCapital(parseFloat(resultCustoCapitalCDI.innerHTML), parseFloat(resultInvestTotal.innerHTML));
         getCotacaoB3Base(parseFloat(cotacaoB3.value), parseFloat(baseRegiao.value));
+        getResultadoArroba(parseFloat(resultCotacaoB3Base.innerHTML), parseFloat(resultPontoEquilibrio.innerHTML))
+        getFaturamento(parseFloat(resultTotalArroba.innerHTML), parseFloat(resultCotacaoB3Base.innerHTML))
+        getLucroOperacao(parseFloat(resultFaturamento.innerHTML), parseFloat(resultInvestTotal.innerHTML))
+        getLucroAnimal(parseFloat(resultLucroLiquidoOperacao.innerHTML), parseFloat(quantidade.value), parseFloat(mortalidade.value))
+        getTaxaLiquidaPeriodo(parseFloat(resultLucroLiquidoOperacao.innerHTML), parseFloat(resultInvestTotal.innerHTML))
+        getTaxaLiquidaMes(parseFloat(resultTaxaLiquidaPeriodo.innerHTML), parseFloat(periodo.value))
+        getTaxaLiquidaAno(parseFloat(resultTaxaLiquidaMes.innerHTML))
+        
         // Encerra funções -> Fim dos resultados!
     } else {
         // Se algum input estiver vazio, exibe o alerta
