@@ -142,18 +142,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
-// # Ordem de inserção
-// - Período
-// - Ganho de Peso Dia
-// - Peso Entrada
-// - Rendimento
-// - Custo diária
-// - Valor animal
-// - Quantidade
-
-
-// # total de @ = (quantidade - (quantidade * (mortalidade/100)) * totalArrobaAnimal)
-// # invest Animais = quantidade * valorAnimal
-// # invest Alimentação = quantidade * periodo * custoDiaria
 // # custo de capital-cdi = 
 // # investimento total = investAnimais + investAlimentacao + custoCapitalCDI
