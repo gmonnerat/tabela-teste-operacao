@@ -25,11 +25,11 @@ const resultInvestTotal = document.querySelector('#investimento-total');
 const resultPontoEquilibrio = document.querySelector('#ponto-equilibrio');
 const resultPesoAnimal = document.querySelector('#peso-animal');
 const resultPesoProducao = document.querySelector('#peso-producao');
-
 const resultPesoCustoCapital = document.querySelector('#peso-custo-capital');
 const cotacaoB3 = document.querySelector('#cotacao-b3');
 const baseRegiao = document.querySelector('#base-regiao');
-const cotacaoB3Base = document.querySelector('#cotacao-b3-base');
+const resultCotacaoB3Base = document.querySelector('#cotacao-b3-base');
+
 const resultadoArroba = document.querySelector('#resultado-arroba');
 const faturamento = document.querySelector('#faturamento');
 const lucroLiquidoOperacao = document.querySelector('#lucro-liquido-operacao');
@@ -125,8 +125,8 @@ function getPesoCustoCapital(capitalCDI, investTotal) {
 }
 
 // --- Cotação B3 - Base
-function getCotacaoB3Base() {
-    
+function getCotacaoB3Base(cotacaoB3, baseRegiao) {
+    resultCotacaoB3Base.innerHTML = (cotacaoB3 - (cotacaoB3 * baseRegiao)).toFixed(2);
 }
 
 // --- Resultado p/ @
@@ -175,7 +175,7 @@ function generateResults() {
     const inputs = document.querySelectorAll('.input-item');
 
     // Flag para verificar se todos os inputs estão preenchidos
-    const allInputsFilled = true;
+    let allInputsFilled = true;
 
     // Verifica cada input
     inputs.forEach(input => {
@@ -201,6 +201,7 @@ function generateResults() {
         getPesoAnimal(parseFloat(resultInvestimentoAnimais.innerHTML), parseFloat(resultInvestTotal.innerHTML));
         getPesoProducao(parseFloat(resultInvestimentoAlimentacao.innerHTML), parseFloat(resultInvestTotal.innerHTML));
         getPesoCustoCapital(parseFloat(resultCustoCapitalCDI.innerHTML), parseFloat(resultInvestTotal.innerHTML));
+        getCotacaoB3Base(parseFloat(cotacaoB3.value), parseFloat(baseRegiao.value));
         // Encerra funções -> Fim dos resultados!
     } else {
         // Se algum input estiver vazio, exibe o alerta
