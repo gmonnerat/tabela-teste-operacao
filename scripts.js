@@ -156,12 +156,12 @@ function getTaxaLiquidaPeriodo(lucroOperacao, investTotal) {
 
 // --- Taxa Líquida ao Mês
 function getTaxaLiquidaMes(taxaLiquidaPeriodo, periodo) {
-    resultTaxaLiquidaMes.innerHTML = (Math.pow((1 + (taxaLiquidaPeriodo/100)), (1/periodo/30)) - 1).toFixed(2);
+    resultTaxaLiquidaMes.innerHTML = ((Math.pow((1 + (taxaLiquidaPeriodo/100)), (1/(periodo/30))) - 1)*100).toFixed(4);
 }
 
 // --- Taxa Líquida ao Ano
 function getTaxaLiquidaAno(taxaLiquidaMes) {
-    resultTaxaLiquidaAno.innerHTML = (Math.pow((1 + (taxaLiquidaMes/100)), 12) - 1).toFixed(2);
+    resultTaxaLiquidaAno.innerHTML = ((Math.pow((1 + (taxaLiquidaMes/100)), 12) - 1)*100).toFixed(2);
 }
 
 // --- Ponto de Equilíbrio
@@ -175,7 +175,7 @@ function getPontoEquilibrio(investTotal, totalArroba) {
 
 // ############## EXECUÇÃO DAS FUNÇÕES ##############
 function generateResults() {
-    const inputs = document.querySelectorAll('.input-item');
+    const inputs = document.querySelectorAll('.required');
 
     // Flag para verificar se todos os inputs estão preenchidos
     let allInputsFilled = true;
