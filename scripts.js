@@ -33,7 +33,6 @@ const resultResultadoArroba = document.querySelector('#resultado-arroba');
 const resultFaturamento = document.querySelector('#faturamento');
 const resultLucroLiquidoOperacao = document.querySelector('#lucro-liquido-operacao');
 const resultLucroLiquidoAnimal = document.querySelector('#lucro-liquido-animal');
-
 const resultTaxaLiquidaPeriodo = document.querySelector('#taxa-liquida-periodo');
 const resultTaxaLiquidaMes = document.querySelector('#taxa-liquida-mes');
 const resultTaxaLiquidaAno = document.querySelector('#taxa-liquida-ano');;
@@ -44,38 +43,32 @@ const resultTaxaLiquidaAno = document.querySelector('#taxa-liquida-ano');;
 // ####################### FUNÇÕES #######################    
 // --- Peso Saída (Kg)
 function getPesoSaida(pesoEntrada, ganhoPesoAnimal) {
-    const pesoSaida = pesoEntrada + ganhoPesoAnimal;
-    resultPesoSaida.innerHTML = pesoSaida;
+    resultPesoSaida.innerHTML = pesoEntrada + ganhoPesoAnimal;
 }
 
 // --- Ganho de Peso Animal (Kg)
 function getGanhoPesoAnimal(periodo, ganhoPesoDia) {
-    const ganhoPesoAnimal = periodo*ganhoPesoDia;
-    resultGanhoPesoAnimal.innerHTML = ganhoPesoAnimal;
+    resultGanhoPesoAnimal.innerHTML = periodo * ganhoPesoDia;
 }
 
 // --- Custo por @
 function getCustoPorArroba(valorAnimal, custoDiaria, periodo, totalArrobaAnimal) {
-    const custoPorArroba = (valorAnimal + (custoDiaria * periodo)) / totalArrobaAnimal;
-    resultCustoPorArroba.innerHTML = custoPorArroba.toFixed(2);
+    resultCustoPorArroba.innerHTML = ((valorAnimal + (custoDiaria * periodo)) / totalArrobaAnimal).toFixed(2);
 }
 
 // --- Custo por Lote
 function getCustoPorLote(custoDiaria, quantidade, periodo) {
-    const custoPorLote = (quantidade * custoDiaria) * periodo;
-    resultCustoPorLote.innerHTML = custoPorLote;
+    resultCustoPorLote.innerHTML = (quantidade * custoDiaria) * periodo;
 }
 
 // --- Ganho de Peso @
 function getGanhoPesoArroba(ganhoPesoAnimal, rendimento) {
-    const ganhoPesoArroba = (ganhoPesoAnimal * (rendimento/100)) / 15;
-    resultGanhoPesoArroba.innerHTML = ganhoPesoArroba.toFixed(2);
+    resultGanhoPesoArroba.innerHTML = ((ganhoPesoAnimal * (rendimento/100)) / 15).toFixed(2);
 }
 
 // --- Total de @ Animal
 function getTotalArrobaAnimal(pesoSaida, rendimento) {
-    const totalArrobaAnimal = (pesoSaida * (rendimento/100))/ (15);
-    resultTotalArrobaAnimal.innerHTML = totalArrobaAnimal.toFixed(2);
+    resultTotalArrobaAnimal.innerHTML = ((pesoSaida * (rendimento/100))/ (15)).toFixed(2);
 }
 
 // -- Total de @
@@ -105,6 +98,7 @@ function getCapitalCDI(investAnimais, periodo, investAlimentacao) {
     resultCustoCapitalCDI.innerHTML = capitalCDI.toFixed(2);
 }
 
+// --- Investimento Total
 function getInvestimentoTotal(investAnimais, investAlimentacao, capitalCDI) {
     resultInvestTotal.innerHTML = (investAnimais + investAlimentacao + capitalCDI).toFixed(2);
 }   
@@ -166,8 +160,7 @@ function getTaxaLiquidaAno(taxaLiquidaMes) {
 
 // --- Ponto de Equilíbrio
 function getPontoEquilibrio(investTotal, totalArroba) {
-    const pontoEquilibrio = investTotal/totalArroba;
-    resultPontoEquilibrio.innerHTML = pontoEquilibrio.toFixed(2);
+    resultPontoEquilibrio.innerHTML = (investTotal/totalArroba).toFixed(2);
 }
 
 // -----------------------------------------------------------------------------------------------
