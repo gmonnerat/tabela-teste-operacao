@@ -212,3 +212,26 @@ function generateResults() {
         alert('Por favor, preencha todos os campos.');
     }
 }
+
+function captureTableAndDownload() {
+    // Captura a tabela com o id 'myTable' usando html2canvas
+    html2canvas(document.getElementById('myTable')).then(function(canvas) {
+        // Converte o canvas em uma URL de imagem
+        var link = document.createElement('a');
+        link.href = canvas.toDataURL();
+
+        var today = new Date();
+        var formattedDate = today.getDate().toString().padStart(2, '0') + 
+            '-' + (today.getMonth() + 1).toString().padStart(2, '0') + 
+            '-' + today.getFullYear() + 
+            '_' + today.getHours().toString().padStart(2, '0') + 
+            '-' + today.getMinutes().toString().padStart(2, '0') + 
+            '-' + today.getSeconds().toString().padStart(2, '0');
+
+        // Define o nome do arquivo
+        link.download = 'tabela-' + formattedDate + '.png';
+
+        // Dispara um evento de clique para iniciar o download
+        link.dispatchEvent(new MouseEvent('click'));
+    });
+}

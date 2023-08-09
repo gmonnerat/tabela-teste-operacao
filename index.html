@@ -11,9 +11,9 @@
 
 <body>  
     
-    <div class="container">
+    <div class="container-fluid">
         <main>
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="myTable">
                 <thead>
                     <tr>
                         <th class="title-table" colspan="2">PLANILHA DE TESTE DE OPERAÇÃO DA TURMADA BRUTA</th>
@@ -36,7 +36,12 @@
                     </tr>
                     <tr>
                         <th class="item-linha-title">Tipo</th>
-                        <td class="td-input input-tipo"><input type="text" name="tipo" class="input-item" id="tipo"></td>
+                        <td class="td-input input-tipo">
+                            <select class="input-item" name="tipo" id="tipo">
+                                <option value="-">--</option>
+                                <option value="Engorda">Engorda</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Idade</th>
@@ -44,7 +49,12 @@
                     </tr>
                     <tr>
                         <th class="item-linha-title">Tipo de Engorda</th>
-                        <td class="td-input input-tipo-engorda"><input type="text" name="tipo-engorda" class="input-item" id="tipo-engorda"></td>
+                        <td class="td-input input-tipo-engorda">
+                            <select class="input-item" name="tipo-engorda" id="tipo-engorda">
+                                <option value="-">--</option>
+                                <option value="Confinamento">Confinamento</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th class="item-linha-title">Peso de Entrada (Kg)</th>
@@ -59,7 +69,7 @@
                         <td class="td-input input-periodo"><input type="text" name="periodo" class="input-item required" id="periodo"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Custo da Diária</th>
+                        <th class="item-linha-title">Custo da Diária (R$)</th>
                         <td class="td-input input-custo-diaria"><input type="text" name="custo-diaria" class="input-item required" id="custo-diaria"></td>
                     </tr>
                     <tr>
@@ -71,19 +81,19 @@
                         <td class="indicador-amarelo" id="result-ganho-peso-animal"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Custo por @</th>
+                        <th class="item-linha-title">Custo por @ (R$)</th>
                         <td class="indicador-amarelo" id="custo-por-arroba"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Custo por Lote</th>
+                        <th class="item-linha-title">Custo por Lote (R$)</th>
                         <td class="indicador-amarelo" id="custo-por-lote"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Valor do Animal</th>
+                        <th class="item-linha-title">Valor do Animal (R$)</th>
                         <td class="td-input input-valor-animal"><input type="text" name="valor-animal" class="input-item required" id="valor-animal"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Rendimento</th>
+                        <th class="item-linha-title">Rendimento (%)</th>
                         <td class="td-input input-rendimento"><input type="text" name="rendimento" class="input-item required" id="rendimento"></td>
                     </tr>
                     <tr>
@@ -95,7 +105,7 @@
                         <td class="indicador-amarelo" id="total-arroba-animal"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Mortalidade</th>
+                        <th class="item-linha-title">Mortalidade (%)</th>
                         <td class="td-input input-mortalidade"><input type="text" name="mortalidade" class="input-item required" id="mortalidade"></td>
                     </tr>
                     <tr>
@@ -103,19 +113,19 @@
                         <td class="indicador-amarelo" id="total-arroba"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Invest Animais</th>
+                        <th class="item-linha-title">Invest Animais (R$)</th>
                         <td class="indicador-amarelo" id="investimento-animais"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Invest Alimentação</th>
+                        <th class="item-linha-title">Invest Alimentação (R$)</th>
                         <td class="indicador-amarelo" id="investimento-alimentacao"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Custo de Capital-CDI</th>
+                        <th class="item-linha-title">Custo de Capital-CDI (R$)</th>
                         <td class="indicador-amarelo" id="custo-capital-cdi"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Investimento Total</th>
+                        <th class="item-linha-title">Investimento Total (R$)</th>
                         <td class="indicador-amarelo" id="investimento-total"></td>
                     </tr>
                     <tr>
@@ -123,68 +133,69 @@
                         <td class="indicador-verde" id="ponto-equilibrio"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Peso do Animal</th>
+                        <th class="item-linha-title">Peso do Animal (%)</th>
                         <td class="indicador-amarelo" id="peso-animal"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Peso da Produção</th>
+                        <th class="item-linha-title">Peso da Produção (%)</th>
                         <td class="indicador-amarelo" id="peso-producao"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Peso do Custo de Capital</th>
+                        <th class="item-linha-title">Peso do Custo de Capital (%)</th>
                         <td class="indicador-amarelo" id="peso-custo-capital"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Cotação B3</th>
+                        <th class="item-linha-title">Cotação B3 (R$)</th>
                         <td class="td-input input-cotacao-b3"><input type="text" name="cotacao-b3" class="input-item required" id="cotacao-b3"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Base da sua Região</th>
+                        <th class="item-linha-title">Base da sua Região (%)</th>
                         <td class="td-input input-base-regiao"><input type="text" name="base-regiao" class="input-item required" id="base-regiao"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Cotação B3 - Base</th>
+                        <th class="item-linha-title">Cotação B3 - Base (R$)</th>
                         <td class="indicador-amarelo" id="cotacao-b3-base"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Resultado p/ @</th>
+                        <th class="item-linha-title">Resultado p/ @ (R$)</th>
                         <td class="indicador-amarelo" id="resultado-arroba"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Faturamento</th>
+                        <th class="item-linha-title">Faturamento (R$)</th>
                         <td class="indicador-amarelo" id="faturamento"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Lucro Líquido na Operação</th>
+                        <th class="item-linha-title">Lucro Líquido na Operação (R$)</th>
                         <td class="indicador-amarelo" id="lucro-liquido-operacao"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Lucro Líquido por Animal</th>
+                        <th class="item-linha-title">Lucro Líquido por Animal (R$)</th>
                         <td class="indicador-amarelo" id="lucro-liquido-animal"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Taxa Líquida no Período</th>
+                        <th class="item-linha-title">Taxa Líquida no Período (%)</th>
                         <td class="indicador-amarelo" id="taxa-liquida-periodo"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Taxa Líquida ao Mês</th>
+                        <th class="item-linha-title">Taxa Líquida ao Mês (%)</th>
                         <td class="indicador-amarelo" id="taxa-liquida-mes"></td>
                     </tr>
                     <tr>
-                        <th class="item-linha-title">Taxa Líquida ao Ano</th>
+                        <th class="item-linha-title">Taxa Líquida ao Ano (%)</th>
                         <td class="indicador-amarelo" id="taxa-liquida-ano"></td>
                     </tr>
                 </tbody>
             </table>
 
-            <button onclick="generateResults()">Gerar Resultados</button>
+            <button class="btn-default" onclick="generateResults()">Gerar Resultados</button>
+            <button class="btn-default" onclick="captureTableAndDownload()">Compartilhar</button>
         </main>
 
         <footer>
-
         </footer>
     </div>
-
+    
     <script src="scripts.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </body>
 </html>
