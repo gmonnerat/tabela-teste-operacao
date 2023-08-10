@@ -273,15 +273,80 @@ function getTaxasBaseB3() {
     baseTaxa22.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td22/100))).toFixed(2);
 }
 
-// function getTestesBase() {
-// }
+function getTestesBase() {
+    lucro2.innerHTML = (parseFloat(baseTaxa2.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao2.innerHTML = (parseFloat(lucro2.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro3.innerHTML = (parseFloat(baseTaxa3.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao3.innerHTML = (parseFloat(lucro3.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro4.innerHTML = (parseFloat(baseTaxa4.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao4.innerHTML = (parseFloat(lucro4.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro5.innerHTML = (parseFloat(baseTaxa5.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao5.innerHTML = (parseFloat(lucro5.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro5.innerHTML = (parseFloat(baseTaxa5.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao5.innerHTML = (parseFloat(lucro5.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro6.innerHTML = (parseFloat(baseTaxa6.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao6.innerHTML = (parseFloat(lucro6.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro7.innerHTML = (parseFloat(baseTaxa7.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao7.innerHTML = (parseFloat(lucro7.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro8.innerHTML = (parseFloat(baseTaxa8.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao8.innerHTML = (parseFloat(lucro8.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro9.innerHTML = (parseFloat(baseTaxa9.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao9.innerHTML = (parseFloat(lucro9.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro10.innerHTML = (parseFloat(baseTaxa10.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao10.innerHTML = (parseFloat(lucro10.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro11.innerHTML = (parseFloat(baseTaxa11.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao11.innerHTML = (parseFloat(lucro11.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro12.innerHTML = (parseFloat(baseTaxa12.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao12.innerHTML = (parseFloat(lucro12.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro14.innerHTML = (parseFloat(baseTaxa14.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao14.innerHTML = (parseFloat(lucro14.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro13.innerHTML = (parseFloat(baseTaxa13.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao13.innerHTML = (parseFloat(lucro13.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro15.innerHTML = (parseFloat(baseTaxa15.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao15.innerHTML = (parseFloat(lucro15.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro16.innerHTML = (parseFloat(baseTaxa16.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao16.innerHTML = (parseFloat(lucro16.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro17.innerHTML = (parseFloat(baseTaxa17.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao17.innerHTML = (parseFloat(lucro17.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro18.innerHTML = (parseFloat(baseTaxa18.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao18.innerHTML = (parseFloat(lucro18.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro19.innerHTML = (parseFloat(baseTaxa19.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao19.innerHTML = (parseFloat(lucro19.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro20.innerHTML = (parseFloat(baseTaxa20.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao20.innerHTML = (parseFloat(lucro20.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro21.innerHTML = (parseFloat(baseTaxa21.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao21.innerHTML = (parseFloat(lucro21.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+
+    lucro22.innerHTML = (parseFloat(baseTaxa22.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(2);
+    lucroOperacao22.innerHTML = (parseFloat(lucro22.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
+}
+
 
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
 
 // ############## EXECUÇÃO DAS FUNÇÕES ##############
 function generateResults() {
-    console.log((cotacaoB3.value - (cotacaoB3.value * (td2/100))).toFixed(2));
     const inputs = document.querySelectorAll('.required');
 
     // Flag para verificar se todos os inputs estão preenchidos
@@ -312,14 +377,15 @@ function generateResults() {
         getPesoProducao(parseFloat(resultInvestimentoAlimentacao.innerHTML), parseFloat(resultInvestTotal.innerHTML));
         getPesoCustoCapital(parseFloat(resultCustoCapitalCDI.innerHTML), parseFloat(resultInvestTotal.innerHTML));
         getCotacaoB3Base(parseFloat(cotacaoB3.value), parseFloat(baseRegiao.value));
-        getResultadoArroba(parseFloat(resultCotacaoB3Base.innerHTML), parseFloat(resultPontoEquilibrio.innerHTML))
-        getFaturamento(parseFloat(resultTotalArroba.innerHTML), parseFloat(resultCotacaoB3Base.innerHTML))
-        getLucroOperacao(parseFloat(resultFaturamento.innerHTML), parseFloat(resultInvestTotal.innerHTML))
-        getLucroAnimal(parseFloat(resultLucroLiquidoOperacao.innerHTML), parseFloat(quantidade.value), parseFloat(mortalidade.value))
-        getTaxaLiquidaPeriodo(parseFloat(resultLucroLiquidoOperacao.innerHTML), parseFloat(resultInvestTotal.innerHTML))
-        getTaxaLiquidaMes(parseFloat(resultTaxaLiquidaPeriodo.innerHTML), parseFloat(periodo.value))
-        getTaxaLiquidaAno(parseFloat(resultTaxaLiquidaMes.innerHTML))
+        getResultadoArroba(parseFloat(resultCotacaoB3Base.innerHTML), parseFloat(resultPontoEquilibrio.innerHTML));
+        getFaturamento(parseFloat(resultTotalArroba.innerHTML), parseFloat(resultCotacaoB3Base.innerHTML));
+        getLucroOperacao(parseFloat(resultFaturamento.innerHTML), parseFloat(resultInvestTotal.innerHTML));
+        getLucroAnimal(parseFloat(resultLucroLiquidoOperacao.innerHTML), parseFloat(quantidade.value), parseFloat(mortalidade.value));
+        getTaxaLiquidaPeriodo(parseFloat(resultLucroLiquidoOperacao.innerHTML), parseFloat(resultInvestTotal.innerHTML));
+        getTaxaLiquidaMes(parseFloat(resultTaxaLiquidaPeriodo.innerHTML), parseFloat(periodo.value));
+        getTaxaLiquidaAno(parseFloat(resultTaxaLiquidaMes.innerHTML));
         getTaxasBaseB3();
+        getTestesBase();
         
         // Encerra funções -> Fim dos resultados!
     } else {
