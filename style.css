@@ -3,7 +3,7 @@ body {
 }
 .title-table {
     text-align: center;
-    background-color: #0d0dcc !important;
+    background-color: #0d0dcc !important; /*eeeeff*/
     color: #FFF !important;
     border: 1px solid #adadad !important;
     padding: 8;
@@ -23,7 +23,10 @@ body {
     width: 100%;
 }
 table tbody th {
-    width: 200px !important;
+    width: 180px !important;
+    font-size: 12px;
+}
+table tbody td {
     font-size: 12px;
 }
 .indicador-verde {
@@ -31,7 +34,7 @@ table tbody th {
     color: #FFF !important;
 }
 .indicador-amarelo {
-    background-color: #dfdb00 !important;
+    background-color: #dfdb00 !important; /*fffeca*/
     border: 1px solid #adadad !important;
 }
 .btn-default {

@@ -11,193 +11,402 @@
 
 <body>  
     
-    <div class="container-fluid">
-        <main>
-            <table class="table table-bordered" id="myTable">
-                <thead>
-                    <tr>
-                        <th class="title-table" colspan="2">PLANILHA DE TESTE DE OPERAÇÃO DA TURMADA BRUTA</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th class="item-linha-title">Quantidade</th>
-                        <td class="td-input input-qtd"><input type="text" name="quantidade" class="input-item required" id="quantidade" placeholder="Digite a quantidade"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Sexo</th>
-                        <td class="td-input input-sexo">
-                            <select class="input-item" name="sexo" id="sexo">
-                                <option value="-">--</option>
-                                <option value="M">M</option>
-                                <option value="F">F</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Tipo</th>
-                        <td class="td-input input-tipo">
-                            <select class="input-item" name="tipo" id="tipo">
-                                <option value="-">--</option>
-                                <option value="Nelore">Nelore</option>
-                                <option value="Acelerado">Acelerado</option>
-                                <option value="Cruzado">Cruzado</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Idade</th>
-                        <td class="td-input input-idade"><input type="text" name="idade" class="input-item" id="idade"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Tipo de Engorda</th>
-                        <td class="td-input input-tipo-engorda">
-                            <select class="input-item" name="tipo-engorda" id="tipo-engorda">
-                                <option value="-">--</option>
-                                <option value="Confinamento">Confinamento</option>
-                                <option value="TIP">TIP</option>
-                                <option value="Engorda a Pasto">Engorda a Pasto</option>
-                                <option value="Cria">Cria</option>
-                                <option value="Recria">Recria</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Peso de Entrada (Kg)</th>
-                        <td class="td-input input-peso-entrada"><input type="text" name="peso-entrada" class="input-item required" id="peso-entrada"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Peso de Saída (Kg)</th>
-                        <td class="indicador-amarelo" id="result-peso-saida"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Período (dias)</th>
-                        <td class="td-input input-periodo"><input type="text" name="periodo" class="input-item required" id="periodo"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Custo da Diária (R$)</th>
-                        <td class="td-input input-custo-diaria"><input type="text" name="custo-diaria" class="input-item required" id="custo-diaria"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Ganho de Peso Dia (Kg)</th>
-                        <td class="td-input input-ganho-peso-dia"><input type="text" name="ganho-peso-dia" class="input-item required" id="ganho-peso-dia"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Ganho de Peso Animal (Kg)</th>
-                        <td class="indicador-amarelo" id="result-ganho-peso-animal"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Custo por @ (R$)</th>
-                        <td class="indicador-amarelo" id="custo-por-arroba"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Custo por Lote (R$)</th>
-                        <td class="indicador-amarelo" id="custo-por-lote"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Valor do Animal (R$)</th>
-                        <td class="td-input input-valor-animal"><input type="text" name="valor-animal" class="input-item required" id="valor-animal"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Rendimento (%)</th>
-                        <td class="td-input input-rendimento"><input type="text" name="rendimento" class="input-item required" id="rendimento"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Ganho de Peso @</th>
-                        <td class="indicador-amarelo" id="ganho-peso-arroba"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Total de @ Animal</th>
-                        <td class="indicador-amarelo" id="total-arroba-animal"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Mortalidade (%)</th>
-                        <td class="td-input input-mortalidade"><input type="text" name="mortalidade" class="input-item required" id="mortalidade"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Total de @</th>
-                        <td class="indicador-amarelo" id="total-arroba"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Invest Animais (R$)</th>
-                        <td class="indicador-amarelo" id="investimento-animais"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Invest Alimentação (R$)</th>
-                        <td class="indicador-amarelo" id="investimento-alimentacao"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Custo de Capital-CDI (R$)</th>
-                        <td class="indicador-amarelo" id="custo-capital-cdi"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Investimento Total (R$)</th>
-                        <td class="indicador-amarelo" id="investimento-total"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title indicador-verde">Ponto de Equilíbrio @</th>
-                        <td class="indicador-verde" id="ponto-equilibrio"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Peso do Animal (%)</th>
-                        <td class="indicador-amarelo" id="peso-animal"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Peso da Produção (%)</th>
-                        <td class="indicador-amarelo" id="peso-producao"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Peso do Custo de Capital (%)</th>
-                        <td class="indicador-amarelo" id="peso-custo-capital"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Cotação B3 (R$)</th>
-                        <td class="td-input input-cotacao-b3"><input type="text" name="cotacao-b3" class="input-item required" id="cotacao-b3"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Base da sua Região (%)</th>
-                        <td class="td-input input-base-regiao"><input type="text" name="base-regiao" class="input-item required" id="base-regiao"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Cotação B3 - Base (R$)</th>
-                        <td class="indicador-amarelo" id="cotacao-b3-base"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Resultado p/ @ (R$)</th>
-                        <td class="indicador-amarelo" id="resultado-arroba"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Faturamento (R$)</th>
-                        <td class="indicador-amarelo" id="faturamento"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Lucro Líquido na Operação (R$)</th>
-                        <td class="indicador-amarelo" id="lucro-liquido-operacao"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Lucro Líquido por Animal (R$)</th>
-                        <td class="indicador-amarelo" id="lucro-liquido-animal"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Taxa Líquida no Período (%)</th>
-                        <td class="indicador-amarelo" id="taxa-liquida-periodo"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Taxa Líquida ao Mês (%)</th>
-                        <td class="indicador-amarelo" id="taxa-liquida-mes"></td>
-                    </tr>
-                    <tr>
-                        <th class="item-linha-title">Taxa Líquida ao Ano (%)</th>
-                        <td class="indicador-amarelo" id="taxa-liquida-ano"></td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="container">
+        <div class="row">
+            <!-- TABELA PRINCIPAL -->
+            <div class="col-md-6 p-0">
+                <main>
+                    <table class="table table-bordered" id="myTable">
+                        <thead>
+                            <tr>
+                                <th class="title-table" colspan="2">PLANILHA DE TESTE DE OPERAÇÃO DA TURMADA BRUTA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="item-linha-title">Quantidade</th>
+                                <td class="td-input input-qtd"><input type="text" name="quantidade" class="input-item required" id="quantidade" placeholder="Digite a quantidade"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Sexo</th>
+                                <td class="td-input input-sexo">
+                                    <select class="input-item" name="sexo" id="sexo">
+                                        <option value="-">--</option>
+                                        <option value="M">M</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Tipo</th>
+                                <td class="td-input input-tipo">
+                                    <select class="input-item" name="tipo" id="tipo">
+                                        <option value="-">--</option>
+                                        <option value="Nelore">Nelore</option>
+                                        <option value="Acelerado">Acelerado</option>
+                                        <option value="Cruzado">Cruzado</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Idade</th>
+                                <td class="td-input input-idade"><input type="text" name="idade" class="input-item" id="idade"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Tipo de Engorda</th>
+                                <td class="td-input input-tipo-engorda">
+                                    <select class="input-item" name="tipo-engorda" id="tipo-engorda">
+                                        <option value="-">--</option>
+                                        <option value="Confinamento">Confinamento</option>
+                                        <option value="TIP">TIP</option>
+                                        <option value="Engorda a Pasto">Engorda a Pasto</option>
+                                        <option value="Cria">Cria</option>
+                                        <option value="Recria">Recria</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Peso de Entrada (Kg)</th>
+                                <td class="td-input input-peso-entrada"><input type="text" name="peso-entrada" class="input-item required" id="peso-entrada"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Peso de Saída (Kg)</th>
+                                <td class="indicador-amarelo" id="result-peso-saida"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Período (dias)</th>
+                                <td class="td-input input-periodo"><input type="text" name="periodo" class="input-item required" id="periodo"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Custo da Diária (R$)</th>
+                                <td class="td-input input-custo-diaria"><input type="text" name="custo-diaria" class="input-item required" id="custo-diaria"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Ganho de Peso Dia (Kg)</th>
+                                <td class="td-input input-ganho-peso-dia"><input type="text" name="ganho-peso-dia" class="input-item required" id="ganho-peso-dia"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Ganho de Peso Animal (Kg)</th>
+                                <td class="indicador-amarelo" id="result-ganho-peso-animal"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Custo por @ (R$)</th>
+                                <td class="indicador-amarelo" id="custo-por-arroba"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Custo por Lote (R$)</th>
+                                <td class="indicador-amarelo" id="custo-por-lote"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Valor do Animal (R$)</th>
+                                <td class="td-input input-valor-animal"><input type="text" name="valor-animal" class="input-item required" id="valor-animal"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Rendimento (%)</th>
+                                <td class="td-input input-rendimento"><input type="text" name="rendimento" class="input-item required" id="rendimento"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Ganho de Peso @</th>
+                                <td class="indicador-amarelo" id="ganho-peso-arroba"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Total de @ Animal</th>
+                                <td class="indicador-amarelo" id="total-arroba-animal"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Mortalidade (%)</th>
+                                <td class="td-input input-mortalidade"><input type="text" name="mortalidade" class="input-item required" id="mortalidade"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Total de @</th>
+                                <td class="indicador-amarelo" id="total-arroba"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Invest Animais (R$)</th>
+                                <td class="indicador-amarelo" id="investimento-animais"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Invest Alimentação (R$)</th>
+                                <td class="indicador-amarelo" id="investimento-alimentacao"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Custo de Capital-CDI (R$)</th>
+                                <td class="indicador-amarelo" id="custo-capital-cdi"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Investimento Total (R$)</th>
+                                <td class="indicador-amarelo" id="investimento-total"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title indicador-verde">Ponto de Equilíbrio @</th>
+                                <td class="indicador-verde" id="ponto-equilibrio"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Peso do Animal (%)</th>
+                                <td class="indicador-amarelo" id="peso-animal"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Peso da Produção (%)</th>
+                                <td class="indicador-amarelo" id="peso-producao"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Peso do Custo de Capital (%)</th>
+                                <td class="indicador-amarelo" id="peso-custo-capital"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Cotação B3 (R$)</th>
+                                <td class="td-input input-cotacao-b3"><input type="text" name="cotacao-b3" class="input-item required" id="cotacao-b3"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Base da sua Região (%)</th>
+                                <td class="td-input input-base-regiao"><input type="text" name="base-regiao" class="input-item required" id="base-regiao"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Cotação B3 - Base (R$)</th>
+                                <td class="indicador-amarelo" id="cotacao-b3-base"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Resultado p/ @ (R$)</th>
+                                <td class="indicador-amarelo" id="resultado-arroba"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Faturamento (R$)</th>
+                                <td class="indicador-amarelo" id="faturamento"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Lucro Líquido na Operação (R$)</th>
+                                <td class="indicador-amarelo" id="lucro-liquido-operacao"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Lucro Líquido por Animal (R$)</th>
+                                <td class="indicador-amarelo" id="lucro-liquido-animal"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Taxa Líquida no Período (%)</th>
+                                <td class="indicador-amarelo" id="taxa-liquida-periodo"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Taxa Líquida ao Mês (%)</th>
+                                <td class="indicador-amarelo" id="taxa-liquida-mes"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Taxa Líquida ao Ano (%)</th>
+                                <td class="indicador-amarelo" id="taxa-liquida-ano"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </main>
+            </div>
 
-            <button class="btn-default" onclick="generateResults()">Gerar Resultados</button>
-            <button class="btn-default" onclick="captureTableAndDownload()">Compartilhar</button>
-        </main>
+            <!-- TABELA LATERAL -->
+            <div class="col-md-3">
+                <aside>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th colspan="2">BASE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>%</td>
+                                <td>R$</td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-2">2</td>
+                                <td class="base-taxa-2"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-3">3</td>
+                                <td class="base-taxa-3"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-4">4</td>
+                                <td class="base-taxa-4"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-5">5</td>
+                                <td class="base-taxa-5"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-6">6</td>
+                                <td class="base-taxa-6"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-7">7</td>
+                                <td class="base-taxa-7"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-8">8</td>
+                                <td class="base-taxa-8"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-9">9</td>
+                                <td class="base-taxa-9"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-10">10</td>
+                                <td class="base-taxa-10"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-11">11</td>
+                                <td class="base-taxa-11"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-12">12</td>
+                                <td class="base-taxa-12"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-13">13</td>
+                                <td class="base-taxa-13"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-14">14</td>
+                                <td class="base-taxa-14"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-15">15</td>
+                                <td class="base-taxa-15"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-16">16</td>
+                                <td class="base-taxa-16"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-17">17</td>
+                                <td class="base-taxa-17"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-18">18</td>
+                                <td class="base-taxa-18"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-19">19</td>
+                                <td class="base-taxa-19"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-20">20</td>
+                                <td class="base-taxa-20"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-21">21</td>
+                                <td class="base-taxa-21"></td>
+                            </tr>
+                            <tr>
+                                <td class="taxa-percent td-22">22</td>
+                                <td class="base-taxa-22"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </aside>
+            </div>
+
+            <div class="col-md-3 p-0">
+                <aside>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th colspan="2">TESTE DE BASE</th>
+                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th>Lucro p/ @</th>
+                                    <th>Lucro Operação</th>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-2">-</td>
+                                    <td class="lucro-operacao-2">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-3">-</td>
+                                    <td class="lucro-operacao-3">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-4">-</td>
+                                    <td class="lucro-operacao-4">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-5">-</td>
+                                    <td class="lucro-operacao-5">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-6">-</td>
+                                    <td class="lucro-operacao-6">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-7">-</td>
+                                    <td class="lucro-operacao-7">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-8">-</td>
+                                    <td class="lucro-operacao-8">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-9">-</td>
+                                    <td class="lucro-operacao-9">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-10">-</td>
+                                    <td class="lucro-operacao-10">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-11">-</td>
+                                    <td class="lucro-operacao-11">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-12">-</td>
+                                    <td class="lucro-operacao-12">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-13">-</td>
+                                    <td class="lucro-operacao-13">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-14">-</td>
+                                    <td class="lucro-operacao-14">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-15">-</td>
+                                    <td class="lucro-operacao-15">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-16">-</td>
+                                    <td class="lucro-operacao-16">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-17">-</td>
+                                    <td class="lucro-operacao-17">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-18">-</td>
+                                    <td class="lucro-operacao-18">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-19">-</td>
+                                    <td class="lucro-operacao-19">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-20">-</td>
+                                    <td class="lucro-operacao-20">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-21">-</td>
+                                    <td class="lucro-operacao-21">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="lucro-22">-</td>
+                                    <td class="lucro-operacao-22">-</td>
+                                </tr>
+                            </tbody>
+                        </thead>
+                    </table>
+                </aside>
+            </div>
+        </div>
 
         <footer>
+            <button class="btn-default" onclick="generateResults()">Gerar Resultados</button>
+            <button class="btn-default" onclick="captureTableAndDownload()">Compartilhar</button>
         </footer>
     </div>
     
