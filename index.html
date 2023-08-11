@@ -12,7 +12,7 @@
 <body>  
     
     <div class="container">
-        <div class="row">
+        <div id="printScreen" class="row">
             <!-- TABELA PRINCIPAL -->
             <div class="col-md-6 p-0">
                 <main>
@@ -24,7 +24,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th class="item-linha-title">Quantidade</th>
+                                <th class="item-linha-title">Quantidade de Animais</th>
                                 <td class="td-input input-qtd"><input type="text" name="quantidade" class="input-item required" id="quantidade" placeholder="Digite a quantidade"></td>
                             </tr>
                             <tr>
@@ -53,7 +53,7 @@
                                 <td class="td-input input-idade"><input type="text" name="idade" class="input-item" id="idade"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Tipo de Engorda</th>
+                                <th class="item-linha-title">Operação</th>
                                 <td class="td-input input-tipo-engorda">
                                     <select class="input-item" name="tipo-engorda" id="tipo-engorda">
                                         <option value="-">--</option>
@@ -78,11 +78,11 @@
                                 <td class="td-input input-periodo"><input type="text" name="periodo" class="input-item required" id="periodo"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Custo da Diária (R$)</th>
+                                <th class="item-linha-title">Custo da Diária (R$/dia/cab)</th>
                                 <td class="td-input input-custo-diaria"><input type="text" name="custo-diaria" class="input-item required" id="custo-diaria"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Ganho de Peso Dia (Kg)</th>
+                                <th class="item-linha-title">GMD</th>
                                 <td class="td-input input-ganho-peso-dia"><input type="text" name="ganho-peso-dia" class="input-item required" id="ganho-peso-dia"></td>
                             </tr>
                             <tr>
@@ -118,15 +118,15 @@
                                 <td class="td-input input-mortalidade"><input type="text" name="mortalidade" class="input-item required" id="mortalidade"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Total de @</th>
+                                <th class="item-linha-title">Total de @ na Operação</th>
                                 <td class="indicador-amarelo" id="total-arroba"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Invest Animais (R$)</th>
+                                <th class="item-linha-title">Investimento em Animais (R$)</th>
                                 <td class="indicador-amarelo" id="investimento-animais"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Invest Alimentação (R$)</th>
+                                <th class="item-linha-title">Investimento em Alimentação + Op (R$)</th>
                                 <td class="indicador-amarelo" id="investimento-alimentacao"></td>
                             </tr>
                             <tr>
@@ -166,11 +166,15 @@
                                 <td class="indicador-amarelo" id="cotacao-b3-base"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Resultado p/ @ (R$)</th>
+                                <th class="item-linha-title">Quantidade de Contratos</th>
+                                <td class="indicador-amarelo" id="quantidade-contratos"></td>
+                            </tr>
+                            <tr>
+                                <th class="item-linha-title">Resultado por @ (R$)</th>
                                 <td class="indicador-amarelo" id="resultado-arroba"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Faturamento (R$)</th>
+                                <th class="item-linha-title">Faturamento na Operação (R$)</th>
                                 <td class="indicador-amarelo" id="faturamento"></td>
                             </tr>
                             <tr>
@@ -204,13 +208,13 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th colspan="2">BASE</th>
+                                <th class="title-table" colspan="2">BASE</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>%</td>
-                                <td>R$</td>
+                                <th>%</th>
+                                <th>R$</th>
                             </tr>
                             <tr>
                                 <td class="taxa-percent td-2">2</td>
@@ -306,7 +310,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th colspan="2">TESTE DE BASE</th>
+                                <th class="title-table" colspan="2">TESTE DE BASE</th>
                             </tr>
                             <tbody>
                                 <tr>
@@ -403,7 +407,7 @@
                 </aside>
             </div>
         </div>
-
+        
         <footer>
             <button class="btn-default" onclick="generateResults()">Gerar Resultados</button>
             <button class="btn-default" onclick="captureTableAndDownload()">Compartilhar</button>

@@ -29,6 +29,7 @@ const resultPesoCustoCapital = document.querySelector('#peso-custo-capital');
 const cotacaoB3 = document.querySelector('#cotacao-b3');
 const baseRegiao = document.querySelector('#base-regiao');
 const resultCotacaoB3Base = document.querySelector('#cotacao-b3-base');
+const resultQuantidadeContratos =  document.querySelector('#quantidade-contratos');
 const resultResultadoArroba = document.querySelector('#resultado-arroba');
 const resultFaturamento = document.querySelector('#faturamento');
 const resultLucroLiquidoOperacao = document.querySelector('#lucro-liquido-operacao');
@@ -207,6 +208,10 @@ function getCotacaoB3Base(cotacaoB3, baseRegiao) {
     resultCotacaoB3Base.innerHTML = (cotacaoB3 - (cotacaoB3 * (baseRegiao/100))).toFixed(2);
 }
 
+function getQuantidadeContratos(totalArroba) {
+    resultQuantidadeContratos.innerHTML = totalArroba/330;
+}
+
 // --- Resultado p/ @
 function getResultadoArroba(cotacaoB3Base, pontoEquilibrio) {
     resultResultadoArroba.innerHTML = (cotacaoB3Base - pontoEquilibrio).toFixed(2);
@@ -341,7 +346,6 @@ function getTestesBase() {
     lucroOperacao22.innerHTML = (parseFloat(lucro22.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
 }
 
-
 // -----------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
 
@@ -377,6 +381,7 @@ function generateResults() {
         getPesoProducao(parseFloat(resultInvestimentoAlimentacao.innerHTML), parseFloat(resultInvestTotal.innerHTML));
         getPesoCustoCapital(parseFloat(resultCustoCapitalCDI.innerHTML), parseFloat(resultInvestTotal.innerHTML));
         getCotacaoB3Base(parseFloat(cotacaoB3.value), parseFloat(baseRegiao.value));
+        getQuantidadeContratos(parseFloat(resultTotalArroba.innerHTML));
         getResultadoArroba(parseFloat(resultCotacaoB3Base.innerHTML), parseFloat(resultPontoEquilibrio.innerHTML));
         getFaturamento(parseFloat(resultTotalArroba.innerHTML), parseFloat(resultCotacaoB3Base.innerHTML));
         getLucroOperacao(parseFloat(resultFaturamento.innerHTML), parseFloat(resultInvestTotal.innerHTML));
@@ -396,7 +401,7 @@ function generateResults() {
 
 function captureTableAndDownload() {
     // Captura a tabela com o id 'myTable' usando html2canvas
-    html2canvas(document.getElementById('myTable')).then(function(canvas) {
+    html2canvas(document.getElementById('printScreen')).then(function(canvas) {
         // Converte o canvas em uma URL de imagem
         var link = document.createElement('a');
         link.href = canvas.toDataURL();
