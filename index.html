@@ -12,14 +12,14 @@
 <body>  
     
     <div class="container">
-        <div id="printScreen" class="row">
+        <div id="printScreen" class="row center">
             <!-- TABELA PRINCIPAL -->
             <div class="col-md-6 p-0">
                 <main>
                     <table class="table table-bordered" id="myTable">
                         <thead>
                             <tr>
-                                <th class="title-table" colspan="2">PLANILHA DE TESTE DE OPERAÇÃO DA TURMADA BRUTA</th>
+                                <th class="title-table" colspan="2">Sistema de Testes de Operações da Turmada Bruta</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,7 +75,7 @@
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Período (dias)</th>
-                                <td class="td-input input-periodo"><input type="text" name="periodo" class="input-item required" id="periodo"></td>
+                                <td class="td-input input-periodo"><input type="text" data-value="" name="periodo" class="input-item required" id="periodo"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Custo da Diária (R$/dia/cab)</th>
@@ -208,7 +208,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th class="title-table" colspan="2">BASE</th>
+                                <th class="title-table" colspan="2">Base</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -310,7 +310,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th class="title-table" colspan="2">TESTE DE BASE</th>
+                                <th class="title-table" colspan="2">Teste de Base</th>
                             </tr>
                             <tbody>
                                 <tr>
@@ -408,7 +408,7 @@
             </div>
         </div>
         
-        <footer>
+        <footer class="center">
             <button class="btn-default" onclick="generateResults()">Gerar Resultados</button>
             <button class="btn-default" onclick="captureTableAndDownload()">Compartilhar</button>
         </footer>
