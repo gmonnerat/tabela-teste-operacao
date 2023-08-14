@@ -504,8 +504,16 @@ function generateResults() {
 }
 
 function captureTableAndDownload() {
-    // Captura a tabela com o id 'myTable' usando html2canvas
-    html2canvas(document.getElementById('printScreen')).then(function(canvas) {
+    // Opções para html2canvas
+    const options = {
+        scale: 1, // Ajuste a escala conforme necessário
+        width: 920, // Defina a largura desejada
+        windowWidth: 920, // Defina a largura da janela virtual
+        windowHeight: document.getElementById('printScreen').scrollHeight // Defina a altura da janela virtual com base no conteúdo
+    };
+
+    // Captura a tabela com o id 'printScreen' usando html2canvas
+    html2canvas(document.getElementById('printScreen'), options).then(function(canvas) {
         // Convert canvas content to an image (data URL)
         const dataURL = canvas.toDataURL();
 
@@ -515,7 +523,7 @@ function captureTableAndDownload() {
         // Write content to the new window or tab
         printWindow.document.write('<html><head><title>Sistema de Testes de Operações da Turmada Bruta</title></head><body>');
         printWindow.document.write('<style>body { margin: 0; padding: 0; width: 920px;} img { margin: 0; padding: 0; } img { display: block; }</style>');
-        printWindow.document.write('<img src="' + dataURL + '" width="' + canvas.width + '" height="' + canvas.height + '"/>');
+        printWindow.document.write('<img src="' + dataURL + '" width="920" height="' + canvas.height + '"/>');
         printWindow.document.write('</body></html>');
         printWindow.document.close();
 
@@ -525,6 +533,7 @@ function captureTableAndDownload() {
         };
     });
 }
+
 
 function test() {
     quantidade.value = 100;
@@ -539,8 +548,8 @@ function test() {
     baseRegiao.value = 10;
 }
 
-document.addEventListener("DOMContentLoaded", (e) => {
-    e.preventDefault();
-    // test();
-    // generateResults();
-});
+// document.addEventListener("DOMContentLoaded", (e) => {
+//     e.preventDefault();
+//     test();
+//     generateResults();
+// });
