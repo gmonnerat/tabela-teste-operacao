@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Teste</title>
 </head>
 
@@ -71,7 +74,7 @@
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Peso de Saída (Kg)</th>
-                                <td class="indicador-amarelo" id="result-peso-saida"></td>
+                                <td data-value="" class="indicador-amarelo" id="result-peso-saida"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Período (dias)</th>
@@ -87,15 +90,15 @@
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Ganho de Peso Animal (Kg)</th>
-                                <td class="indicador-amarelo" id="result-ganho-peso-animal"></td>
+                                <td data-value="" class="indicador-amarelo" id="result-ganho-peso-animal"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Custo por @ (R$)</th>
-                                <td class="indicador-amarelo" id="custo-por-arroba"></td>
+                                <td data-value="" class="indicador-amarelo" id="custo-por-arroba"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Custo por Lote (R$)</th>
-                                <td class="indicador-amarelo" id="custo-por-lote"></td>
+                                <td data-value="" class="indicador-amarelo" id="custo-por-lote"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Valor do Animal (R$)</th>
@@ -107,11 +110,11 @@
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Ganho de Peso @</th>
-                                <td class="indicador-amarelo" id="ganho-peso-arroba"></td>
+                                <td data-value="" class="indicador-amarelo" id="ganho-peso-arroba"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Total de @ Animal</th>
-                                <td class="indicador-amarelo" id="total-arroba-animal"></td>
+                                <td data-value="" class="indicador-amarelo" id="total-arroba-animal"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Mortalidade (%)</th>
@@ -119,83 +122,83 @@
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Total de @ na Operação</th>
-                                <td class="indicador-amarelo" id="total-arroba"></td>
+                                <td data-value="" class="indicador-amarelo" id="total-arroba"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Investimento em Animais (R$)</th>
-                                <td class="indicador-amarelo" id="investimento-animais"></td>
+                                <td data-value="" class="indicador-amarelo" id="investimento-animais"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Investimento em Alimentação + Op (R$)</th>
-                                <td class="indicador-amarelo" id="investimento-alimentacao"></td>
+                                <td data-value="" class="indicador-amarelo" id="investimento-alimentacao"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Custo de Capital-CDI (R$)</th>
-                                <td class="indicador-amarelo" id="custo-capital-cdi"></td>
+                                <td data-value="" class="indicador-amarelo" id="custo-capital-cdi"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Investimento Total (R$)</th>
-                                <td class="indicador-amarelo" id="investimento-total"></td>
+                                <td data-value="" class="indicador-amarelo" id="investimento-total"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title indicador-verde">Ponto de Equilíbrio @</th>
-                                <td class="indicador-verde" id="ponto-equilibrio"></td>
+                                <td data-value="" class="indicador-verde" id="ponto-equilibrio"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Peso do Animal (%)</th>
-                                <td class="indicador-amarelo" id="peso-animal"></td>
+                                <th class="item-linha-title">Peso do Valor do Animal (%)</th>
+                                <td data-value="" class="indicador-amarelo" id="peso-animal"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Peso da Produção (%)</th>
-                                <td class="indicador-amarelo" id="peso-producao"></td>
+                                <th class="item-linha-title">Peso do Custo de Produção (%)</th>
+                                <td data-value="" class="indicador-amarelo" id="peso-producao"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Peso do Custo de Capital (%)</th>
-                                <td class="indicador-amarelo" id="peso-custo-capital"></td>
+                                <td data-value="" class="indicador-amarelo" id="peso-custo-capital"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Cotação B3 (R$)</th>
-                                <td class="td-input input-cotacao-b3"><input type="text" name="cotacao-b3" class="input-item required" id="cotacao-b3"></td>
+                                <td data-value="" class="td-input input-cotacao-b3"><input type="text" name="cotacao-b3" class="input-item required" id="cotacao-b3"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Base da sua Região (%)</th>
-                                <td class="td-input input-base-regiao"><input type="text" name="base-regiao" class="input-item required" id="base-regiao"></td>
+                                <td data-value="" class="td-input input-base-regiao"><input type="text" name="base-regiao" class="input-item required" id="base-regiao"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Cotação B3 - Base (R$)</th>
-                                <td class="indicador-amarelo" id="cotacao-b3-base"></td>
+                                <td data-value="" class="indicador-amarelo" id="cotacao-b3-base"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Quantidade de Contratos</th>
-                                <td class="indicador-amarelo" id="quantidade-contratos"></td>
+                                <td data-value="" class="indicador-amarelo" id="quantidade-contratos"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Resultado por @ (R$)</th>
-                                <td class="indicador-amarelo" id="resultado-arroba"></td>
+                                <td data-value="" class="indicador-amarelo" id="resultado-arroba"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Faturamento na Operação (R$)</th>
-                                <td class="indicador-amarelo" id="faturamento"></td>
+                                <td data-value="" class="indicador-amarelo" id="faturamento"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Lucro Líquido na Operação (R$)</th>
-                                <td class="indicador-amarelo" id="lucro-liquido-operacao"></td>
+                                <td data-value="" class="indicador-amarelo" id="lucro-liquido-operacao"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Lucro Líquido por Animal (R$)</th>
-                                <td class="indicador-amarelo" id="lucro-liquido-animal"></td>
+                                <td data-value="" class="indicador-amarelo" id="lucro-liquido-animal"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Taxa Líquida no Período (%)</th>
-                                <td class="indicador-amarelo" id="taxa-liquida-periodo"></td>
+                                <td data-value="" class="indicador-amarelo" id="taxa-liquida-periodo"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Taxa Líquida ao Mês (%)</th>
-                                <td class="indicador-amarelo" id="taxa-liquida-mes"></td>
+                                <td data-value="" class="indicador-amarelo" id="taxa-liquida-mes"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Taxa Líquida ao Ano (%)</th>
-                                <td class="indicador-amarelo" id="taxa-liquida-ano"></td>
+                                <td data-value="" class="indicador-amarelo" id="taxa-liquida-ano"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -217,87 +220,87 @@
                                 <th>R$</th>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-2">2</td>
+                                <td data-value="2" class="taxa-percent td-2">2</td>
                                 <td class="base-taxa-2"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-3">3</td>
+                                <td data-value="3" class="taxa-percent td-3">3</td>
                                 <td class="base-taxa-3"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-4">4</td>
+                                <td data-value="4" class="taxa-percent td-4">4</td>
                                 <td class="base-taxa-4"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-5">5</td>
+                                <td data-value="5" class="taxa-percent td-5">5</td>
                                 <td class="base-taxa-5"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-6">6</td>
+                                <td data-value="6" class="taxa-percent td-6">6</td>
                                 <td class="base-taxa-6"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-7">7</td>
+                                <td data-value="7" class="taxa-percent td-7">7</td>
                                 <td class="base-taxa-7"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-8">8</td>
+                                <td data-value="8" class="taxa-percent td-8">8</td>
                                 <td class="base-taxa-8"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-9">9</td>
+                                <td data-value="9" class="taxa-percent td-9">9</td>
                                 <td class="base-taxa-9"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-10">10</td>
+                                <td data-value="10" class="taxa-percent td-10">10</td>
                                 <td class="base-taxa-10"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-11">11</td>
+                                <td data-value="11" class="taxa-percent td-11">11</td>
                                 <td class="base-taxa-11"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-12">12</td>
+                                <td data-value="12" class="taxa-percent td-12">12</td>
                                 <td class="base-taxa-12"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-13">13</td>
+                                <td data-value="13" class="taxa-percent td-13">13</td>
                                 <td class="base-taxa-13"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-14">14</td>
+                                <td data-value="14" class="taxa-percent td-14">14</td>
                                 <td class="base-taxa-14"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-15">15</td>
+                                <td data-value="15" class="taxa-percent td-15">15</td>
                                 <td class="base-taxa-15"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-16">16</td>
+                                <td data-value="16" class="taxa-percent td-16">16</td>
                                 <td class="base-taxa-16"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-17">17</td>
+                                <td data-value="17" class="taxa-percent td-17">17</td>
                                 <td class="base-taxa-17"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-18">18</td>
+                                <td data-value="18" class="taxa-percent td-18">18</td>
                                 <td class="base-taxa-18"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-19">19</td>
+                                <td data-value="19" class="taxa-percent td-19">19</td>
                                 <td class="base-taxa-19"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-20">20</td>
+                                <td data-value="20" class="taxa-percent td-20">20</td>
                                 <td class="base-taxa-20"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-21">21</td>
+                                <td data-value="21" class="taxa-percent td-21">21</td>
                                 <td class="base-taxa-21"></td>
                             </tr>
                             <tr>
-                                <td class="taxa-percent td-22">22</td>
+                                <td data-value="22" class="taxa-percent td-22">22</td>
                                 <td class="base-taxa-22"></td>
                             </tr>
                         </tbody>

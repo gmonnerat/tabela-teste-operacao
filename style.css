@@ -2,6 +2,7 @@
 body {
     margin: 0;
     background-color: #5d5d5d;
+    font-family: 'Poppins', sans-serif;
 }
 .title-table {
     text-align: center;
@@ -13,12 +14,12 @@ body {
 }
 .center {
     width: 100%;
-    max-width: 900px;
+    max-width: 920px;
     margin: auto;
 }
 .item-linha-title {
     background-color: #333333 !important;
-    border: 1px solid #333333 !important;
+    border: 1px solid #5d5d5d !important;
     color: #FFF !important;
 }
 .td-input  {
@@ -39,11 +40,12 @@ table tbody td {
     font-size: 12px;
 }
 .indicador-verde {
-    background-color: #21de1d !important;
+    background-color: #72c571 !important;
     color: #FFF !important;
+    font-weight: 800;
 }
 .indicador-amarelo {
-    background-color: #21de1d !important; /*fffeca*/
+    background-color: #72c571 !important; /*fffeca*/
     border: 1px solid #adadad !important;
 }
 .btn-default {
