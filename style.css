@@ -14,10 +14,11 @@ body {
 }
 .center {
     width: 100%;
-    max-width: 920px;
+    max-width: 720px;
     margin: auto;
 }
-.item-linha-title {
+.item-linha-title,
+.taxa-percent {
     background-color: #333333 !important;
     border: 1px solid #5d5d5d !important;
     color: #FFF !important;
@@ -67,4 +68,10 @@ table tbody td {
     border-radius: 6px;
     margin-bottom: 30px;
     margin-right: 15px;
+}
+
+@media (max-width: 767px) {
+    .col-md-3 {
+        padding: 0 !important;
+    }
 }

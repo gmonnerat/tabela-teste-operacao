@@ -129,64 +129,64 @@ const lucroOperacao22 = document.querySelector('.lucro-operacao-22');
 // --- Peso Saída (Kg)
 function getPesoSaida(pesoEntrada, ganhoPesoAnimal) {
     let x = pesoEntrada + ganhoPesoAnimal;
-    resultPesoSaida.innerHTML = x.toFixed(4);
-    resultPesoSaida.setAttribute('data-value', x.toFixed(4));
+    resultPesoSaida.innerHTML = x.toFixed(2);
+    resultPesoSaida.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Ganho de Peso Animal (Kg)
 function getGanhoPesoAnimal(periodo, ganhoPesoDia) {
     let x = periodo * ganhoPesoDia;
-    resultGanhoPesoAnimal.innerHTML = x.toFixed(4);
-    resultGanhoPesoAnimal.setAttribute('data-value', x.toFixed(4));
+    resultGanhoPesoAnimal.innerHTML = x.toFixed(2);
+    resultGanhoPesoAnimal.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Custo por @
 function getCustoPorArroba(valorAnimal, custoDiaria, periodo, totalArrobaAnimal) {
     let x = ((valorAnimal + (custoDiaria * periodo)) / totalArrobaAnimal);
-    resultCustoPorArroba.innerHTML = x.toFixed(4);
-    resultCustoPorArroba.setAttribute('data-value', x.toFixed(4));
+    resultCustoPorArroba.innerHTML = x.toFixed(2);
+    resultCustoPorArroba.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Custo por Lote
 function getCustoPorLote(custoDiaria, quantidade, periodo) {
     let x = (quantidade * custoDiaria) * periodo
-    resultCustoPorLote.innerHTML = x.toFixed(4);
-    resultCustoPorLote.setAttribute('data-value', x.toFixed(4));
+    resultCustoPorLote.innerHTML = x.toFixed(2);
+    resultCustoPorLote.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Ganho de Peso @
 function getGanhoPesoArroba(ganhoPesoAnimal, rendimento) {
     let x = (ganhoPesoAnimal * (rendimento/100)) / 15;
-    resultGanhoPesoArroba.innerHTML = x.toFixed(4);
-    resultGanhoPesoArroba.setAttribute('data-value', x.toFixed(4));
+    resultGanhoPesoArroba.innerHTML = x.toFixed(3);
+    resultGanhoPesoArroba.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Total de @ Animal
 function getTotalArrobaAnimal(pesoSaida, rendimento) {
     let x = ((pesoSaida * (rendimento/100))/ (15));
-    resultTotalArrobaAnimal.innerHTML = x.toFixed(4);
-    resultTotalArrobaAnimal.setAttribute('data-value', x.toFixed(4));
+    resultTotalArrobaAnimal.innerHTML = x.toFixed(2);
+    resultTotalArrobaAnimal.setAttribute('data-value', x.toFixed(6));
 }
 
 // -- Total de @
 function getTotalArroba(quantidade, mortalidade, totalArrobaAnimal) {
     let x = ((quantidade - (quantidade * (mortalidade/100))) * totalArrobaAnimal);
-    resultTotalArroba.innerHTML = x.toFixed(4);
-    resultTotalArroba.setAttribute('data-value', x.toFixed(4));
+    resultTotalArroba.innerHTML = x.toFixed(2);
+    resultTotalArroba.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Investimento Animais
 function getInvestimentoAnimais(quantidade, valorAnimal) {
     let x = valorAnimal * quantidade;
-    resultInvestimentoAnimais.innerHTML = x.toFixed(4);
-    resultInvestimentoAnimais.setAttribute('data-value', x.toFixed(4));
+    resultInvestimentoAnimais.innerHTML = x.toFixed(2);
+    resultInvestimentoAnimais.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Investimento Alimentação
 function getInvestimentoAlimentacao(quantidade, periodo, custoDiaria) {
     let x = quantidade * periodo * custoDiaria;
-    resultInvestimentoAlimentacao.innerHTML = x.toFixed(4);
-    resultInvestimentoAlimentacao.setAttribute('data-value', x.toFixed(4));
+    resultInvestimentoAlimentacao.innerHTML = x.toFixed(2);
+    resultInvestimentoAlimentacao.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Custo de Capital CDI
@@ -194,260 +194,260 @@ function getCapitalCDI(investAnimais, periodo, investAlimentacao) {
     const juroAnimais = (investAnimais * Math.pow(1.01, (periodo / 30))) - investAnimais;
     const juroAlimentacao = (investAlimentacao * Math.pow(1.01, (periodo / 45))) - investAlimentacao;
     let x = juroAnimais + juroAlimentacao;
-    resultCustoCapitalCDI.innerHTML = x.toFixed(4);
-    resultCustoCapitalCDI.setAttribute('data-value', x.toFixed(4));
+    resultCustoCapitalCDI.innerHTML = x.toFixed(2);
+    resultCustoCapitalCDI.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Investimento Total
 function getInvestimentoTotal(investAnimais, investAlimentacao, capitalCDI) {
     let x = investAnimais + investAlimentacao + capitalCDI;
-    resultInvestTotal.innerHTML = x.toFixed(4);
-    resultInvestTotal.setAttribute('data-value', x.toFixed(4));
+    resultInvestTotal.innerHTML = x.toFixed(2);
+    resultInvestTotal.setAttribute('data-value', x.toFixed(6));
 }  
 
 // --- Peso do Animal
 function getPesoAnimal(investAnimais, investTotal) {
     let x = (investAnimais * 100) / investTotal;
-    resultPesoAnimal.innerHTML = x.toFixed(4);
-    resultPesoAnimal.setAttribute('data-value', x.toFixed(4));
+    resultPesoAnimal.innerHTML = x.toFixed(2);
+    resultPesoAnimal.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Peso da Produção
 function getPesoProducao(investAlimentacao, investTotal) {
     let x = (investAlimentacao * 100) / investTotal;
-    resultPesoProducao.innerHTML = x.toFixed(4);
-    resultPesoProducao.setAttribute('data-value', x.toFixed(4));
+    resultPesoProducao.innerHTML = x.toFixed(2);
+    resultPesoProducao.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Peso do Custo de Capital
 function getPesoCustoCapital(capitalCDI, investTotal) {
     let x = (capitalCDI * 100) / investTotal;
-    resultPesoCustoCapital.innerHTML = x.toFixed(4);
-    resultPesoCustoCapital.setAttribute('data-value', x.toFixed(4));
+    resultPesoCustoCapital.innerHTML = x.toFixed(2);
+    resultPesoCustoCapital.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Cotação B3 - Base
 function getCotacaoB3Base(cotacaoB3, baseRegiao) {
     let x = cotacaoB3 - (cotacaoB3 * (baseRegiao/100));
-    resultCotacaoB3Base.innerHTML = x.toFixed(4);
-    resultCotacaoB3Base.setAttribute('data-value', x.toFixed(4));
+    resultCotacaoB3Base.innerHTML = x.toFixed(2);
+    resultCotacaoB3Base.setAttribute('data-value', x.toFixed(6));
 }
 
 function getQuantidadeContratos(totalArroba) {
     let x = totalArroba/330;
-    resultQuantidadeContratos.innerHTML = x.toFixed(4);
-    resultQuantidadeContratos.setAttribute('data-value', x.toFixed(4));
+    resultQuantidadeContratos.innerHTML = x.toFixed(2);
+    resultQuantidadeContratos.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Resultado p/ @
 function getResultadoArroba(cotacaoB3Base, pontoEquilibrio) {
     let x = cotacaoB3Base - pontoEquilibrio;
-    resultResultadoArroba.innerHTML = x.toFixed(4);
-    resultResultadoArroba.setAttribute('data-value', x.toFixed(4));
+    resultResultadoArroba.innerHTML = x.toFixed(2);
+    resultResultadoArroba.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Faturamento
 function getFaturamento(totalArroba, cotacaoB3Base) {
     let x = totalArroba * cotacaoB3Base;
-    resultFaturamento.innerHTML = x.toFixed(4);
-    resultFaturamento.setAttribute('data-value', x.toFixed(4));
+    resultFaturamento.innerHTML = x.toFixed(2);
+    resultFaturamento.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Lucro Líquido na Operação
 function getLucroOperacao(faturamento, investTotal) {
     let x = faturamento - investTotal;
-    resultLucroLiquidoOperacao.innerHTML = x.toFixed(4);
-    resultLucroLiquidoOperacao.setAttribute('data-value', x.toFixed(4));
+    resultLucroLiquidoOperacao.innerHTML = x.toFixed(2);
+    resultLucroLiquidoOperacao.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Lucro Líquido por Animal
 function getLucroAnimal(lucroOperacao, quantidade, mortalidade) {
     let x = lucroOperacao / (quantidade - (quantidade * (mortalidade/100)));
-    resultLucroLiquidoAnimal.innerHTML = x.toFixed(4);
-    resultLucroLiquidoAnimal.setAttribute('data-value', x.toFixed(4));
+    resultLucroLiquidoAnimal.innerHTML = x.toFixed(2);
+    resultLucroLiquidoAnimal.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Taxa Líquida no Período
 function getTaxaLiquidaPeriodo(lucroOperacao, investTotal) {
     let x = (lucroOperacao * 100) / investTotal;
-    resultTaxaLiquidaPeriodo.innerHTML = x.toFixed(4);
-    resultTaxaLiquidaPeriodo.setAttribute('data-value', x.toFixed(4));
+    resultTaxaLiquidaPeriodo.innerHTML = x.toFixed(2);
+    resultTaxaLiquidaPeriodo.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Taxa Líquida ao Mês
 function getTaxaLiquidaMes(taxaLiquidaPeriodo, periodo) {
     let x = (Math.pow((1 + (taxaLiquidaPeriodo/100)), (1/(periodo/30))) - 1)*100;
-    resultTaxaLiquidaMes.innerHTML = x.toFixed(4);
+    resultTaxaLiquidaMes.innerHTML = x.toFixed(2);
     resultTaxaLiquidaMes.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Taxa Líquida ao Ano
 function getTaxaLiquidaAno(taxaLiquidaMes) {
     let x = (Math.pow((1 + (taxaLiquidaMes/100)), 12) - 1)*100;
-    resultTaxaLiquidaAno.innerHTML = x.toFixed(4);
-    resultTaxaLiquidaAno.setAttribute('data-value', x.toFixed(4));
+    resultTaxaLiquidaAno.innerHTML = x.toFixed(2);
+    resultTaxaLiquidaAno.setAttribute('data-value', x.toFixed(6));
 }
 
 // --- Ponto de Equilíbrio
 function getPontoEquilibrio(investTotal, totalArroba) {
     let x = investTotal/totalArroba;
-    resultPontoEquilibrio.innerHTML = x.toFixed(4);
-    resultPontoEquilibrio.setAttribute('data-value', x.toFixed(4));
+    resultPontoEquilibrio.innerHTML = x.toFixed(2);
+    resultPontoEquilibrio.setAttribute('data-value', x.toFixed(6));
 }
 
 
 // Taxa Base B3 - (Taxa Base B3 * (%))
 function getTaxasBaseB3() {
     baseTaxa2.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td2/100))).toFixed(2);
-    baseTaxa2.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td2/100))).toFixed(4));
+    baseTaxa2.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td2/100))).toFixed(6));
     baseTaxa3.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td3/100))).toFixed(2);
-    baseTaxa3.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td3/100))).toFixed(4));
+    baseTaxa3.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td3/100))).toFixed(6));
     baseTaxa4.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td4/100))).toFixed(2);
-    baseTaxa4.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td4/100))).toFixed(4));
+    baseTaxa4.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td4/100))).toFixed(6));
     baseTaxa5.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td5/100))).toFixed(2);
-    baseTaxa5.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td5/100))).toFixed(4));
+    baseTaxa5.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td5/100))).toFixed(6));
     baseTaxa6.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td6/100))).toFixed(2);
-    baseTaxa6.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td6/100))).toFixed(4));
+    baseTaxa6.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td6/100))).toFixed(6));
     baseTaxa7.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td7/100))).toFixed(2);
-    baseTaxa7.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td7/100))).toFixed(4));
+    baseTaxa7.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td7/100))).toFixed(6));
     baseTaxa8.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td8/100))).toFixed(2);
-    baseTaxa8.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td8/100))).toFixed(4));
+    baseTaxa8.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td8/100))).toFixed(6));
     baseTaxa9.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td9/100))).toFixed(2);
-    baseTaxa9.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td9/100))).toFixed(4));
+    baseTaxa9.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td9/100))).toFixed(6));
     baseTaxa10.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td10/100))).toFixed(2);
-    baseTaxa10.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td10/100))).toFixed(4));
+    baseTaxa10.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td10/100))).toFixed(6));
     baseTaxa11.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td11/100))).toFixed(2);
-    baseTaxa11.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td11/100))).toFixed(4));
+    baseTaxa11.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td11/100))).toFixed(6));
     baseTaxa12.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td12/100))).toFixed(2);
-    baseTaxa12.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td12/100))).toFixed(4));
+    baseTaxa12.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td12/100))).toFixed(6));
     baseTaxa13.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td13/100))).toFixed(2);
-    baseTaxa13.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td13/100))).toFixed(4));
+    baseTaxa13.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td13/100))).toFixed(6));
     baseTaxa14.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td14/100))).toFixed(2);
-    baseTaxa14.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td14/100))).toFixed(4));
+    baseTaxa14.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td14/100))).toFixed(6));
     baseTaxa15.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td15/100))).toFixed(2);
-    baseTaxa15.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td15/100))).toFixed(4));
+    baseTaxa15.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td15/100))).toFixed(6));
     baseTaxa16.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td16/100))).toFixed(2);
-    baseTaxa16.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td16/100))).toFixed(4));
+    baseTaxa16.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td16/100))).toFixed(6));
     baseTaxa17.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td17/100))).toFixed(2);
-    baseTaxa17.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td17/100))).toFixed(4));
+    baseTaxa17.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td17/100))).toFixed(6));
     baseTaxa18.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td18/100))).toFixed(2);
-    baseTaxa18.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td18/100))).toFixed(4));
+    baseTaxa18.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td18/100))).toFixed(6));
     baseTaxa19.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td19/100))).toFixed(2);
-    baseTaxa19.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td19/100))).toFixed(4));
+    baseTaxa19.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td19/100))).toFixed(6));
     baseTaxa20.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td20/100))).toFixed(2);
-    baseTaxa20.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td20/100))).toFixed(4));
+    baseTaxa20.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td20/100))).toFixed(6));
     baseTaxa21.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td21/100))).toFixed(2);
-    baseTaxa21.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td21/100))).toFixed(4));
+    baseTaxa21.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td21/100))).toFixed(6));
     baseTaxa22.innerHTML = (cotacaoB3.value - (cotacaoB3.value * (td22/100))).toFixed(2);
-    baseTaxa22.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td22/100))).toFixed(4));
+    baseTaxa22.setAttribute('data-value', (cotacaoB3.value - (cotacaoB3.value * (td22/100))).toFixed(6));
 }
 
 
 function getTestesBase() {
-    lucro2.innerHTML = (parseFloat(baseTaxa2.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro2.setAttribute('data-value', (parseFloat(baseTaxa2.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro2.innerHTML = (parseFloat(baseTaxa2.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro2.setAttribute('data-value', (parseFloat(baseTaxa2.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao2.innerHTML = (parseFloat(lucro2.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao2.setAttribute('data-value', (parseFloat(lucro2.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao2.setAttribute('data-value', (parseFloat(lucro2.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro3.innerHTML = (parseFloat(baseTaxa3.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro3.setAttribute('data-value', (parseFloat(baseTaxa3.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro3.innerHTML = (parseFloat(baseTaxa3.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro3.setAttribute('data-value', (parseFloat(baseTaxa3.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao3.innerHTML = (parseFloat(lucro3.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao3.setAttribute('data-value', (parseFloat(lucro3.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao3.setAttribute('data-value', (parseFloat(lucro3.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro4.innerHTML = (parseFloat(baseTaxa4.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro4.setAttribute('data-value', (parseFloat(baseTaxa4.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro4.innerHTML = (parseFloat(baseTaxa4.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro4.setAttribute('data-value', (parseFloat(baseTaxa4.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao4.innerHTML = (parseFloat(lucro4.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao4.setAttribute('data-value', (parseFloat(lucro4.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao4.setAttribute('data-value', (parseFloat(lucro4.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro5.innerHTML = (parseFloat(baseTaxa5.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro5.setAttribute('data-value', (parseFloat(baseTaxa5.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro5.innerHTML = (parseFloat(baseTaxa5.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro5.setAttribute('data-value', (parseFloat(baseTaxa5.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao5.innerHTML = (parseFloat(lucro5.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao5.setAttribute('data-value', (parseFloat(lucro5.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao5.setAttribute('data-value', (parseFloat(lucro5.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro6.innerHTML = (parseFloat(baseTaxa6.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro6.setAttribute('data-value', (parseFloat(baseTaxa6.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro6.innerHTML = (parseFloat(baseTaxa6.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro6.setAttribute('data-value', (parseFloat(baseTaxa6.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao6.innerHTML = (parseFloat(lucro6.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao6.setAttribute('data-value', (parseFloat(lucro6.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao6.setAttribute('data-value', (parseFloat(lucro6.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro7.innerHTML = (parseFloat(baseTaxa7.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro7.setAttribute('data-value', (parseFloat(baseTaxa7.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro7.innerHTML = (parseFloat(baseTaxa7.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro7.setAttribute('data-value', (parseFloat(baseTaxa7.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao7.innerHTML = (parseFloat(lucro7.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao7.setAttribute('data-value', (parseFloat(lucro7.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao7.setAttribute('data-value', (parseFloat(lucro7.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro8.innerHTML = (parseFloat(baseTaxa8.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro8.setAttribute('data-value', (parseFloat(baseTaxa8.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro8.innerHTML = (parseFloat(baseTaxa8.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro8.setAttribute('data-value', (parseFloat(baseTaxa8.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao8.innerHTML = (parseFloat(lucro8.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao8.setAttribute('data-value', (parseFloat(lucro8.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao8.setAttribute('data-value', (parseFloat(lucro8.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro9.innerHTML = (parseFloat(baseTaxa9.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro9.setAttribute('data-value', (parseFloat(baseTaxa9.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro9.innerHTML = (parseFloat(baseTaxa9.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro9.setAttribute('data-value', (parseFloat(baseTaxa9.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao9.innerHTML = (parseFloat(lucro9.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao9.setAttribute('data-value', (parseFloat(lucro9.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao9.setAttribute('data-value', (parseFloat(lucro9.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro10.innerHTML = (parseFloat(baseTaxa10.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro10.setAttribute('data-value', (parseFloat(baseTaxa10.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro10.innerHTML = (parseFloat(baseTaxa10.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro10.setAttribute('data-value', (parseFloat(baseTaxa10.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao10.innerHTML = (parseFloat(lucro10.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao10.setAttribute('data-value', (parseFloat(lucro10.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao10.setAttribute('data-value', (parseFloat(lucro10.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro11.innerHTML = (parseFloat(baseTaxa11.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro11.setAttribute('data-value', (parseFloat(baseTaxa11.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro11.innerHTML = (parseFloat(baseTaxa11.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro11.setAttribute('data-value', (parseFloat(baseTaxa11.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao11.innerHTML = (parseFloat(lucro11.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao11.setAttribute('data-value', (parseFloat(lucro11.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao11.setAttribute('data-value', (parseFloat(lucro11.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro12.innerHTML = (parseFloat(baseTaxa12.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro12.setAttribute('data-value', (parseFloat(baseTaxa12.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro12.innerHTML = (parseFloat(baseTaxa12.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro12.setAttribute('data-value', (parseFloat(baseTaxa12.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao12.innerHTML = (parseFloat(lucro12.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao12.setAttribute('data-value', (parseFloat(lucro12.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao12.setAttribute('data-value', (parseFloat(lucro12.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro13.innerHTML = (parseFloat(baseTaxa13.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro13.setAttribute('data-value', (parseFloat(baseTaxa13.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro13.innerHTML = (parseFloat(baseTaxa13.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro13.setAttribute('data-value', (parseFloat(baseTaxa13.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao13.innerHTML = (parseFloat(lucro13.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao13.setAttribute('data-value', (parseFloat(lucro13.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao13.setAttribute('data-value', (parseFloat(lucro13.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro14.innerHTML = (parseFloat(baseTaxa14.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro14.setAttribute('data-value', (parseFloat(baseTaxa14.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro14.innerHTML = (parseFloat(baseTaxa14.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro14.setAttribute('data-value', (parseFloat(baseTaxa14.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao14.innerHTML = (parseFloat(lucro14.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao14.setAttribute('data-value', (parseFloat(lucro14.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao14.setAttribute('data-value', (parseFloat(lucro14.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro15.innerHTML = (parseFloat(baseTaxa15.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro15.setAttribute('data-value', (parseFloat(baseTaxa15.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro15.innerHTML = (parseFloat(baseTaxa15.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro15.setAttribute('data-value', (parseFloat(baseTaxa15.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao15.innerHTML = (parseFloat(lucro15.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao15.setAttribute('data-value', (parseFloat(lucro15.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao15.setAttribute('data-value', (parseFloat(lucro15.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro16.innerHTML = (parseFloat(baseTaxa16.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro16.setAttribute('data-value', (parseFloat(baseTaxa16.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro16.innerHTML = (parseFloat(baseTaxa16.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro16.setAttribute('data-value', (parseFloat(baseTaxa16.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao16.innerHTML = (parseFloat(lucro16.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao16.setAttribute('data-value', (parseFloat(lucro16.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao16.setAttribute('data-value', (parseFloat(lucro16.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro17.innerHTML = (parseFloat(baseTaxa17.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro17.setAttribute('data-value', (parseFloat(baseTaxa17.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro17.innerHTML = (parseFloat(baseTaxa17.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro17.setAttribute('data-value', (parseFloat(baseTaxa17.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao17.innerHTML = (parseFloat(lucro17.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao17.setAttribute('data-value', (parseFloat(lucro17.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao17.setAttribute('data-value', (parseFloat(lucro17.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro18.innerHTML = (parseFloat(baseTaxa18.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro18.setAttribute('data-value', (parseFloat(baseTaxa18.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro18.innerHTML = (parseFloat(baseTaxa18.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro18.setAttribute('data-value', (parseFloat(baseTaxa18.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao18.innerHTML = (parseFloat(lucro18.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao18.setAttribute('data-value', (parseFloat(lucro18.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao18.setAttribute('data-value', (parseFloat(lucro18.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro19.innerHTML = (parseFloat(baseTaxa19.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro19.setAttribute('data-value', (parseFloat(baseTaxa19.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro19.innerHTML = (parseFloat(baseTaxa19.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro19.setAttribute('data-value', (parseFloat(baseTaxa19.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao19.innerHTML = (parseFloat(lucro19.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao19.setAttribute('data-value', (parseFloat(lucro19.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao19.setAttribute('data-value', (parseFloat(lucro19.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro20.innerHTML = (parseFloat(baseTaxa20.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro20.setAttribute('data-value', (parseFloat(baseTaxa20.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro20.innerHTML = (parseFloat(baseTaxa20.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro20.setAttribute('data-value', (parseFloat(baseTaxa20.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao20.innerHTML = (parseFloat(lucro20.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao20.setAttribute('data-value', (parseFloat(lucro20.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao20.setAttribute('data-value', (parseFloat(lucro20.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro21.innerHTML = (parseFloat(baseTaxa21.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro21.setAttribute('data-value', (parseFloat(baseTaxa21.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro21.innerHTML = (parseFloat(baseTaxa21.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro21.setAttribute('data-value', (parseFloat(baseTaxa21.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao21.innerHTML = (parseFloat(lucro21.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao21.setAttribute('data-value', (parseFloat(lucro21.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao21.setAttribute('data-value', (parseFloat(lucro21.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 
-    lucro22.innerHTML = (parseFloat(baseTaxa22.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4);
-    lucro22.setAttribute('data-value', (parseFloat(baseTaxa22.innerHTML) - parseFloat(resultPontoEquilibrio.innerHTML)).toFixed(4));
+    lucro22.innerHTML = (parseFloat(baseTaxa22.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6);
+    lucro22.setAttribute('data-value', (parseFloat(baseTaxa22.innerHTML) - parseFloat(resultPontoEquilibrio.getAttribute('data-value'))).toFixed(6));
     lucroOperacao22.innerHTML = (parseFloat(lucro22.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(2);
-    lucroOperacao22.setAttribute('data-value', (parseFloat(lucro22.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(4));
+    lucroOperacao22.setAttribute('data-value', (parseFloat(lucro22.innerHTML) * parseFloat(resultTotalArroba.innerHTML)).toFixed(6));
 }
 
 // -----------------------------------------------------------------------------------------------
@@ -469,27 +469,27 @@ function generateResults() {
 
     // Executa as funções caso todos os campos estejam preenchidos
     if (allInputsFilled) {
-        getGanhoPesoAnimal(parseFloat(periodo.value), parseFloat(ganhoPesoDia.value));
-        getPesoSaida(parseFloat(pesoEntrada.value), parseFloat(resultGanhoPesoAnimal.getAttribute('data-value')));
-        getTotalArrobaAnimal(parseFloat(rendimento.value), parseFloat(resultPesoSaida.getAttribute('data-value')));
-        getCustoPorArroba(parseFloat(valorAnimal.value), parseFloat(custoDiaria.value), parseFloat(periodo.value), parseFloat(resultTotalArrobaAnimal.getAttribute('data-value')));
-        getGanhoPesoArroba(parseFloat(resultGanhoPesoAnimal.getAttribute('data-value')), parseFloat(rendimento.value));
-        getCustoPorLote(parseFloat(custoDiaria.value), parseFloat(quantidade.value), parseFloat(periodo.value));
-        getTotalArroba(parseFloat(quantidade.value), parseFloat(mortalidade.value), parseFloat(resultTotalArrobaAnimal.getAttribute('data-value')));
-        getInvestimentoAnimais(parseFloat(quantidade.value), parseFloat(valorAnimal.value));
-        getInvestimentoAlimentacao(parseFloat(quantidade.value), parseFloat(periodo.value), parseFloat(custoDiaria.value));
+        getGanhoPesoAnimal(parseFloat((periodo.value).replace(',', '.')), parseFloat((ganhoPesoDia.value).replace(',', '.')));
+        getPesoSaida(parseFloat((pesoEntrada.value).replace(',', '.')), parseFloat(resultGanhoPesoAnimal.getAttribute('data-value')));
+        getTotalArrobaAnimal(parseFloat((rendimento.value).replace(',', '.')), parseFloat(resultPesoSaida.getAttribute('data-value')));
+        getCustoPorArroba(parseFloat((valorAnimal.value).replace(',', '.')), parseFloat(custoDiaria.value), parseFloat(periodo.value), parseFloat(resultTotalArrobaAnimal.getAttribute('data-value')));
+        getGanhoPesoArroba(parseFloat(resultGanhoPesoAnimal.getAttribute('data-value')), parseFloat((rendimento.value).replace(',', '.')));
+        getCustoPorLote(parseFloat((custoDiaria.value).replace(',', '.')), parseFloat(quantidade.value), parseFloat(periodo.value));
+        getTotalArroba(parseFloat(quantidade.value), parseFloat((mortalidade.value).replace(',', '.')), parseFloat(resultTotalArrobaAnimal.getAttribute('data-value')));
+        getInvestimentoAnimais(parseFloat(quantidade.value), parseFloat((valorAnimal.value).replace(',', '.')));
+        getInvestimentoAlimentacao(parseFloat(quantidade.value), parseFloat(periodo.value), parseFloat(((custoDiaria.value).replace(',', '.')).replace(',', '.')));
         getCapitalCDI(parseFloat(resultInvestimentoAnimais.getAttribute('data-value')), parseFloat(periodo.value), resultInvestimentoAlimentacao.getAttribute('data-value'));
         getInvestimentoTotal(parseFloat(resultInvestimentoAnimais.getAttribute('data-value')), parseFloat(resultInvestimentoAlimentacao.getAttribute('data-value')), parseFloat(resultCustoCapitalCDI.getAttribute('data-value')));
         getPontoEquilibrio(parseFloat(resultInvestTotal.getAttribute('data-value')), parseFloat(resultTotalArroba.getAttribute('data-value')));
         getPesoAnimal(parseFloat(resultInvestimentoAnimais.getAttribute('data-value')), parseFloat(resultInvestTotal.getAttribute('data-value')));
         getPesoProducao(parseFloat(resultInvestimentoAlimentacao.getAttribute('data-value')), parseFloat(resultInvestTotal.getAttribute('data-value')));
         getPesoCustoCapital(parseFloat(resultCustoCapitalCDI.getAttribute('data-value')), parseFloat(resultInvestTotal.getAttribute('data-value')));
-        getCotacaoB3Base(parseFloat(cotacaoB3.value), parseFloat(baseRegiao.value));
+        getCotacaoB3Base(parseFloat((cotacaoB3.value).replace(',', '.')), parseFloat((baseRegiao.value).replace(',', '.')));
         getQuantidadeContratos(parseFloat(resultTotalArroba.getAttribute('data-value')));
         getResultadoArroba(parseFloat(resultCotacaoB3Base.getAttribute('data-value')), parseFloat(resultPontoEquilibrio.getAttribute('data-value')));
         getFaturamento(parseFloat(resultTotalArroba.getAttribute('data-value')), parseFloat(resultCotacaoB3Base.getAttribute('data-value')));
         getLucroOperacao(parseFloat(resultFaturamento.getAttribute('data-value')), parseFloat(resultInvestTotal.getAttribute('data-value')));
-        getLucroAnimal(parseFloat(resultLucroLiquidoOperacao.getAttribute('data-value')), parseFloat(quantidade.value), parseFloat(mortalidade.value));
+        getLucroAnimal(parseFloat(resultLucroLiquidoOperacao.getAttribute('data-value')), parseFloat(quantidade.value), parseFloat((mortalidade.value).replace(',', '.')));
         getTaxaLiquidaPeriodo(parseFloat(resultLucroLiquidoOperacao.getAttribute('data-value')), parseFloat(resultInvestTotal.getAttribute('data-value')));
         getTaxaLiquidaMes(parseFloat(resultTaxaLiquidaPeriodo.getAttribute('data-value')), parseFloat(periodo.value));
         getTaxaLiquidaAno(parseFloat(resultTaxaLiquidaMes.getAttribute('data-value')));
@@ -514,8 +514,8 @@ function captureTableAndDownload() {
 
         // Write content to the new window or tab
         printWindow.document.write('<html><head><title>Sistema de Testes de Operações da Turmada Bruta</title></head><body>');
-        printWindow.document.write('<style>body, img { margin: 0; padding: 0; } img { display: block; }</style>');
-        printWindow.document.write('<img src="' + dataURL + '" width="900px" height="' + canvas.height + '"/>');
+        printWindow.document.write('<style>body { margin: 0; padding: 0; width: 920px;} img { margin: 0; padding: 0; } img { display: block; }</style>');
+        printWindow.document.write('<img src="' + dataURL + '" width="' + canvas.width + '" height="' + canvas.height + '"/>');
         printWindow.document.write('</body></html>');
         printWindow.document.close();
 
@@ -531,7 +531,7 @@ function test() {
     pesoEntrada.value = 420;
     periodo.value = 90;
     custoDiaria.value = 15;  
-    ganhoPesoDia.value = 1.5;
+    ganhoPesoDia.value = '1,5';
     valorAnimal.value = 3200;
     rendimento.value = 56;
     mortalidade.value = 1;
