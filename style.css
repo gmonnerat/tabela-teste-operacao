@@ -14,7 +14,7 @@ body {
 }
 .center {
     width: 100%;
-    max-width: 720px;
+    max-width: 920px;
     margin: auto;
 }
 .item-linha-title,
@@ -36,13 +36,13 @@ body {
 }
 table tbody th {
     width: 180px !important;
-    font-size: 12px;
+    font-size: 14px;
 }
 table tbody td {
-    font-size: 12px;
+    font-size: 14px;
 }
 .indicador-verde {
-    background-color: #72c571 !important;
+    background-color: #2989f8 !important;
     color: #FFF !important;
     font-weight: 800;
 }
