@@ -14,79 +14,104 @@
 
 <body>  
     
-    <div class="container">
-        <div id="printScreen" class="row center">
+    <div class="container center" id="printScreen">
+        <h5 class="title-system">Sistema de Testes de Operações da Turmada Bruta</h5>
+        <p class="info-system">Preencha os campos com os valores para sua simulação e clique em Gerar resultado</p>
+        <div class="area-entradas">
+            <div class="field-entrada">
+                <label for="quantidade">Quantidade de animais:</label>
+                <input type="text" name="quantidade" id="quantidade" class="required">
+            </div>
+            <div class="field-entrada">
+                <label for="sexo">Sexo:</label>
+                <select name="sexo" id="sexo">
+                    <option value="-">--</option>
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+            <div class="field-entrada">
+                <label for="tipo">Tipo:</label>
+                <select name="tipo" id="tipo">
+                    <option value="-">--</option>
+                    <option value="Nelore">Nelore</option>
+                    <option value="Acelerado">Acelerado</option>
+                    <option value="Cruzado">Cruzado</option>
+                </select>
+            </div>
+            <div class="field-entrada">
+                <label for="idade">Idade:</label>
+                <input type="text" id="idade" name="idade">
+            </div>
+            <div class="field-entrada">
+                <label for="operacao">Operação:</label>
+                <select name="tipo-engorda" id="tipo-engorda">
+                    <option value="-">--</option>
+                    <option value="Confinamento">Confinamento</option>
+                    <option value="TIP">TIP</option>
+                    <option value="Engorda a Pasto">Engorda a Pasto</option>
+                    <option value="Cria">Cria</option>
+                    <option value="Recria">Recria</option>
+                </select>
+            </div>
+            <div class="field-entrada">
+                <label for="peso-entrada">Peso de entrada (kg):</label>
+                <input type="text" name="peso-entrada" id="peso-entrada">
+            </div>
+            <div class="field-entrada">
+                <label for="">Período:</label>
+                <input type="text" name="periodo" id="periodo">
+            </div>
+            <div class="field-entrada">
+                <label for="">Custo da diária (R$/dia/cab)</label>
+                <input type="text" name="custo-diaria" id="custo-diaria">
+            </div>
+            <div class="field-entrada">
+                <label for="">GMD</label>
+                <input type="text" name="ganho-peso-dia" id="ganho-peso-dia">
+            </div>
+            <div class="field-entrada">
+                <label for="">Valor do Animal (R$)</label>
+                <input type="text" name="valor-animal" id="valor-animal">
+            </div>
+            <div class="field-entrada">
+                <label for="">Rendimento (%)</label>
+                <input type="text" name="rendimento" id="rendimento">
+            </div>
+            <div class="field-entrada">
+                <label for="">Mortalidade (%)</label>
+                <input type="text" name="mortalidade" id="mortalidade">
+            </div>
+            <div class="field-entrada">
+                <label for="">Cotação B3 (R$)</label>
+                <input type="text" name="cotacao-b3" id="cotacao-b3">
+            </div>
+            <div class="field-entrada">
+                <label for="">Base Região (%)</label>
+                <input type="text" name="base-regiao" id="base-regiao">
+            </div>
+        </div>
+        
+        <hr>
+        <button class="btn-results" onclick="generateResults()">Gerar Resultados</button>
+        <button class="btn-clear" onclick="clearFields()">Resetar</button>
+        <button class="btn-share" onclick="captureTableAndDownload()">Salvar</button>
+        
+        <hr>
+        <div class="row">
             <!-- TABELA PRINCIPAL -->
             <div class="col-md-6 p-0">
                 <main>
                     <table class="table table-bordered" id="myTable">
                         <thead>
                             <tr>
-                                <th class="title-table" colspan="2">Sistema de Testes de Operações da Turmada Bruta</th>
+                                <th class="title-table" colspan="2">Resultados</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th class="item-linha-title">Quantidade de Animais</th>
-                                <td class="td-input input-qtd"><input style="text-align: right;" type="text" name="quantidade" class="input-item required" id="quantidade"></td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Sexo</th>
-                                <td class="td-input input-sexo">
-                                    <select style="text-align: right;" class="input-item" name="sexo" id="sexo">
-                                        <option value="-">--</option>
-                                        <option value="M">M</option>
-                                        <option value="F">F</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Tipo</th>
-                                <td class="td-input input-tipo">
-                                    <select style="text-align: right;" class="input-item" name="tipo" id="tipo">
-                                        <option value="-">--</option>
-                                        <option value="Nelore">Nelore</option>
-                                        <option value="Acelerado">Acelerado</option>
-                                        <option value="Cruzado">Cruzado</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Idade</th>
-                                <td class="td-input input-idade"><input style="text-align: right;" type="text" name="idade" class="input-item" id="idade"></td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Operação</th>
-                                <td class="td-input input-tipo-engorda">
-                                    <select style="text-align: right;" class="input-item" name="tipo-engorda" id="tipo-engorda">
-                                        <option value="-">--</option>
-                                        <option value="Confinamento">Confinamento</option>
-                                        <option value="TIP">TIP</option>
-                                        <option value="Engorda a Pasto">Engorda a Pasto</option>
-                                        <option value="Cria">Cria</option>
-                                        <option value="Recria">Recria</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Peso de Entrada (Kg)</th>
-                                <td class="td-input input-peso-entrada"><input style="text-align: right;" type="text" name="peso-entrada" class="input-item required" id="peso-entrada"></td>
-                            </tr>
-                            <tr>
                                 <th class="item-linha-title">Peso de Saída (Kg)</th>
                                 <td style="text-align: right;" data-value="" class="indicador-amarelo" id="result-peso-saida"></td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Período (dias)</th>
-                                <td class="td-input input-periodo"><input style="text-align: right;" type="text" data-value="" name="periodo" class="input-item required" id="periodo"></td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Custo da Diária (R$/dia/cab)</th>
-                                <td class="td-input input-custo-diaria"><input style="text-align: right;" type="text" name="custo-diaria" class="input-item required" id="custo-diaria"></td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">GMD</th>
-                                <td class="td-input input-ganho-peso-dia"><input style="text-align: right;" type="text" name="ganho-peso-dia" class="input-item required" id="ganho-peso-dia"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Ganho de Peso Animal (Kg)</th>
@@ -101,24 +126,12 @@
                                 <td data-value="" class="indicador-amarelo" id="custo-por-lote" style="text-align: right;"></td>
                             </tr>
                             <tr>
-                                <th class="item-linha-title">Valor do Animal (R$)</th>
-                                <td class="td-input input-valor-animal"><input style="text-align: right;" type="text" name="valor-animal" class="input-item required" id="valor-animal"></td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Rendimento (%)</th>
-                                <td class="td-input input-rendimento"><input style="text-align: right;" type="text" name="rendimento" class="input-item required" id="rendimento"></td>
-                            </tr>
-                            <tr>
                                 <th class="item-linha-title">Ganho de Peso @</th>
                                 <td style="text-align: right;" data-value="" class="indicador-amarelo" id="ganho-peso-arroba"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Total de @ Animal</th>
                                 <td style="text-align: right;" data-value="" class="indicador-amarelo" id="total-arroba-animal"></td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Mortalidade (%)</th>
-                                <td class="td-input input-mortalidade"><input style="text-align: right;" type="text" name="mortalidade" class="input-item required" id="mortalidade"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Total de @ na Operação</th>
@@ -155,14 +168,6 @@
                             <tr>
                                 <th class="item-linha-title">Peso do Custo de Capital (%)</th>
                                 <td style="text-align: right;" data-value="" class="indicador-amarelo" id="peso-custo-capital"></td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Cotação B3 (R$)</th>
-                                <td data-value="" class="td-input input-cotacao-b3"><input style="text-align: right;" type="text" name="cotacao-b3" class="input-item required" id="cotacao-b3"></td>
-                            </tr>
-                            <tr>
-                                <th class="item-linha-title">Base da sua Região (%)</th>
-                                <td data-value="" class="td-input input-base-regiao"><input style="text-align: right;" type="text" name="base-regiao" class="input-item required" id="base-regiao"></td>
                             </tr>
                             <tr>
                                 <th class="item-linha-title">Cotação B3 - Base (R$)</th>
@@ -411,11 +416,9 @@
             </div>
         </div>
         
-        <footer class="center">
-            <button class="btn-results" onclick="generateResults()">Gerar Resultados</button>
-            <button class="btn-share" onclick="captureTableAndDownload()">Compartilhar</button>
-            <button class="btn-clear" onclick="clearFields()">Resetar</button>
-        </footer>
+        <!-- <footer style="color:#FFF" class="center">
+           2023 - Todos os direitos reservados
+        </footer> -->
     </div>
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
